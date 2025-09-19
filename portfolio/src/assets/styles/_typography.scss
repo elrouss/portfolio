@@ -1,0 +1,337 @@
+@use "./mixins" as mix;
+@use "./functions" as fn;
+
+.h1 {
+  font-family: Forum, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: fn.to-rem(80px);
+  line-height: fn.to-rem(90px);
+  letter-spacing: fn.to-rem(5px);
+  text-transform: uppercase;
+
+  @include mix.media("l") {
+    font-size: fn.fluid(50px, 80px, "s");
+  }
+
+  @include mix.media("s") {
+    font-size: fn.fluid(40px, 50px, "xs", "s");
+    line-height: fn.fluid(60px, 90px, "xs", "s");
+  }
+
+  @include mix.media("xs") {
+    font-size: fn.fluid(28px, 40px, "xxs", "xs");
+    line-height: fn.fluid(40px, 60px, "xxs", "xs");
+  }
+}
+
+.h2-l {
+  font-family: Forum, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: fn.to-rem(80px);
+  line-height: fn.to-rem(90px);
+  letter-spacing: fn.to-rem(5px);
+  text-transform: uppercase;
+
+  @include mix.media("l") {
+    font-size: fn.fluid(50px, 80px, "s");
+    line-height: fn.fluid(75px, 90px, "s");
+  }
+
+  @include mix.media("s") {
+    font-size: fn.fluid(40px, 50px, "xs", "s");
+    line-height: fn.fluid(60px, 75px, "xs", "s");
+  }
+
+  @include mix.media("xs") {
+    font-size: fn.fluid(28px, 40px, "xxs", "xs");
+    line-height: fn.fluid(40px, 60px, "xxs", "xs");
+  }
+}
+
+.h2-m {
+  font-family: Forum, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: fn.to-rem(50px);
+  line-height: 100%;
+  text-transform: uppercase;
+
+  @include mix.media("xs") {
+    font-size: fn.fluid(32px, 50px, "xxs", "xs");
+  }
+}
+
+.h3-medium-m {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: fn.to-rem(28px);
+  line-height: 100%;
+
+  @include mix.media("l") {
+    font-size: fn.fluid(24px, 28px, "s");
+  }
+
+  @include mix.media("s") {
+    font-size: fn.fluid(20px, 24px, "xs", "s");
+  }
+
+  @include mix.media("xs") {
+    font-size: fn.fluid(16px, 20px, "xxs", "xs");
+  }
+}
+
+.h3-regular {
+  font-family: Forum, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: fn.to-rem(32px);
+  line-height: 100%;
+  letter-spacing: fn.to-rem(5px);
+  text-transform: uppercase;
+
+  @include mix.media("l") {
+    font-size: fn.fluid(28px, 32px, "s");
+    letter-spacing: fn.fluid(3px, 5px, "s");
+  }
+
+  @include mix.media("s") {
+    font-size: fn.fluid(22px, 28px, "xs", "s");
+  }
+
+  @include mix.media("xs") {
+    font-size: fn.fluid(18px, 22px, "xxs", "xs");
+    letter-spacing: fn.fluid(5px, 3px, "xxs", "xs");
+  }
+}
+
+.h4-l {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: fn.to-rem(32px);
+  line-height: 100%;
+}
+
+.h4 {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: fn.to-rem(22px);
+  line-height: 100%;
+}
+
+.h4-normal {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: fn.to-rem(22px);
+  line-height: 100%;
+}
+
+.subheading {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: fn.to-rem(28px);
+  line-height: 100%;
+  letter-spacing: fn.to-rem(2px);
+
+  @include mix.media("l") {
+    font-size: fn.fluid(24px, 28px, "s");
+  }
+
+  @include mix.media("s") {
+    font-size: fn.fluid(20px, 24px, "xs", "s");
+  }
+
+  @include mix.media("xs") {
+    font-size: fn.fluid(16px, 20px, "xxs", "xs");
+  }
+}
+
+.logo {
+  font-family: Forum, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: fn.to-rem(28px);
+  line-height: 100%;
+  letter-spacing: fn.to-rem(5px);
+  text-transform: uppercase;
+
+  @include mix.media("s") {
+    line-height: fn.fluid(50px, 28px, "xs", "s");
+  }
+
+  @include mix.media("xs") {
+    font-size: fn.fluid(16px, 28px, "xxs", "xs");
+    line-height: fn.fluid(16px, 50px, "xxs", "xs");
+  }
+}
+
+.text-l {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: fn.to-rem(22px);
+  line-height: fn.to-rem(38.5px);
+
+  @include mix.media("l") {
+    font-size: fn.fluid(20px, 22px, "s");
+  }
+}
+
+.text {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: fn.to-rem(22px);
+  line-height: 100%;
+
+  @include mix.media("l") {
+    font-size: fn.fluid(20px, 22px, "s");
+  }
+
+  @include mix.media("s") {
+    font-size: fn.fluid(18px, 20px, "xs", "s");
+  }
+
+  @include mix.media("xs") {
+    font-size: fn.fluid(16px, 18px, "xxs", "xs");
+  }
+}
+
+.caption-light {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: fn.to-rem(22px);
+  line-height: 100%;
+  letter-spacing: fn.to-rem(2px);
+
+  @include mix.media("xs") {
+    font-size: fn.fluid(16px, 22px, "xxs", "xs");
+  }
+}
+
+.caption-extra-light-l {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: fn.to-rem(22px);
+  line-height: 100%;
+  letter-spacing: fn.to-rem(2px);
+
+  @include mix.media("xs") {
+    font-size: fn.fluid(16px, 22px, "xxs", "xs");
+  }
+}
+
+.caption-extra-light-m {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: fn.to-rem(22px);
+  line-height: 100%;
+  letter-spacing: fn.to-rem(2px);
+
+  @include mix.media("s") {
+    font-size: fn.fluid(18px, 22px, "xs", "s");
+  }
+
+  @include mix.media("xs") {
+    font-size: fn.fluid(16px, 18px, "xxs", "xs");
+  }
+}
+
+.caption-extra-light {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: fn.to-rem(22px);
+  line-height: 100%;
+  letter-spacing: fn.to-rem(2px);
+
+  @include mix.media("l") {
+    font-size: fn.fluid(20px, 22px, "s");
+  }
+
+  @include mix.media("s") {
+    font-size: fn.fluid(18px, 20px, "xs", "s");
+  }
+
+  @include mix.media("xs") {
+    font-size: fn.fluid(16px, 18px, "xxs", "xs");
+  }
+}
+
+.caption-extra-light-s {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: fn.to-rem(18px);
+  line-height: 100%;
+
+  @include mix.media("l") {
+    font-size: fn.fluid(16px, 18px, "s");
+  }
+}
+
+.caption-light-link {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: fn.to-rem(20px);
+  line-height: 100%;
+  letter-spacing: fn.to-rem(2px);
+}
+
+.legend {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: fn.to-rem(28px);
+  line-height: 100%;
+
+  @include mix.media("xs") {
+    font-size: fn.fluid(16px, 28px, "xxs", "xs");
+  }
+}
+
+.label {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: fn.to-rem(22px);
+  line-height: 100%;
+
+  @include mix.media("xs") {
+    font-size: fn.fluid(16px, 22px, "xxs", "xs");
+  }
+}
+
+.input-text {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: fn.to-rem(18px);
+  line-height: 100%;
+}
+
+.input-text-light {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: fn.to-rem(18px);
+  line-height: 100%;
+}
+
+.input-caption {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: fn.to-rem(12px);
+  line-height: 100%;
+}
+
+.input-hint {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: fn.to-rem(10px);
+  line-height: 100%;
+}
+
+.additional {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: fn.to-rem(22px);
+  line-height: fn.to-rem(40px);
+  text-transform: uppercase;
+
+  @include mix.media("l") {
+    font-size: fn.fluid(20px, 22px, "s");
+  }
+
+  @include mix.media("xs") {
+    font-size: fn.fluid(16px, 20px, "xxs", "xs");
+  }
+}

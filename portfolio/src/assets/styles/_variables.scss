@@ -1,0 +1,20 @@
+@use "sass:map";
+
+$breakpoints: (
+  l: 1920,
+  m: 1280,
+  s: 1024,
+  xs: 768,
+  xxs: 420,
+  xxxs: 320
+);
+
+$media-l: map.get($breakpoints, l);
+$media-m: map.get($breakpoints, m);
+$media-s: map.get($breakpoints, s);
+$media-xs: map.get($breakpoints, xs);
+$media-xxs: map.get($breakpoints, xxs);
+
+$main-container-max-width: 90rem;
+
+$main-container-mgi: clamp(1.25rem, -14.482rem + 24.58vw, 15rem);
