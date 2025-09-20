@@ -1,0 +1,60 @@
+@use "assets/styles/placeholders";
+@use "assets/styles/mixins" as mix;
+@use "assets/styles/functions" as fn;
+
+.accordion {
+  $this: &;
+
+  &__item {
+    border-block-end: fn.to-rem(1px) solid currentcolor;
+  }
+
+  &__header-button {
+    @include mix.transition(color);
+
+    width: 100%;
+    padding-block-end: calc(var(--spacer) * 4 + 1px);
+    font: inherit;
+    text-transform: uppercase;
+    color: currentcolor;
+
+    @include mix.hover {
+      color: var(--color-primary-100);
+    }
+
+    &_expanded {
+      #{$this}__header-icon {
+        &::before {
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+
+  &__header-text {
+    text-align: start;
+  }
+
+  &__header-icon {
+    position: relative;
+    top: calc(var(--spacer) / 2);
+    width: fn.to-rem(24px);
+    height: fn.to-rem(24px);
+    flex-shrink: 0;
+
+    &::before,
+    &::after {
+      content: "";
+      @extend %position-center;
+
+      width: 66.67%;
+      height: fn.to-rem(2px);
+      border-radius: fn.to-rem(25px);
+      background-color: currentcolor;
+    }
+
+    &::before {
+      transform: rotate(90deg);
+    }
+  }
+}

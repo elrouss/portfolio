@@ -9,7 +9,9 @@
 @use "./spacing";
 @use "./themes";
 
+@use "blocks/accordion/accordion" as accordion;
 @use "blocks/button/button" as button;
+@use "blocks/faq/faq" as faq;
 @use "blocks/hamburger-menu/hamburger-menu" as hamburger-menu;
 @use "blocks/header/header" as header;
 @use "blocks/icon/icon" as icon;
