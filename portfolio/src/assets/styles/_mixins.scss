@@ -3,10 +3,10 @@
 @use "sass:map";
 @use "./variables" as vars;
 
-@mixin media($device-size, $property: max-width) {
-  $breakpoint: map.get(vars.$breakpoints, $device-size) - 1;
+@mixin media($device-size) {
+  $breakpoint: map.get(vars.$grid-breakpoints, $device-size) - 1;
 
-  @media screen and (#{$property}: #{$breakpoint}px) {
+  @media (width <= #{$breakpoint}px) {
     @content;
   }
 }
@@ -15,6 +15,29 @@
   @media (hover: hover) {
     &:hover {
       @content;
+    }
+  }
+}
+
+@mixin generate-class-names($list) {
+  $grid-breakpoints: map.keys(vars.$grid-breakpoints);
+
+  @each $class-name, $prop-key, $prop-value in $list {
+    @for $i from 1 through list.length($grid-breakpoints) - 1 {
+      @if $i == 1 {
+        .#{$class-name} {
+          #{$prop-key}: #{$prop-value};
+        }
+      } @else {
+        $key: list.nth($grid-breakpoints, $i);
+        $prev-key: list.nth($grid-breakpoints, $i - 1);
+
+        .#{$class-name}-#{$key} {
+          @include media($prev-key) {
+            #{$prop-key}: #{$prop-value};
+          }
+        }
+      }
     }
   }
 }

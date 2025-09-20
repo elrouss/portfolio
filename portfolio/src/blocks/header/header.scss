@@ -1,0 +1,5 @@
+@use "assets/styles/functions" as fn;
+
+.header {
+  min-height: fn.to-rem(60px);
+}

@@ -51,7 +51,7 @@ export default {
     extensions: ['.js'],
     alias: {
       assets: path.resolve(__dirname, 'src/assets'),
-      components: path.resolve(__dirname, 'src/components'),
+      blocks: path.resolve(__dirname, 'src/blocks'),
       constants: path.resolve(__dirname, 'src/constants'),
       docs: path.resolve(__dirname, 'src/docs'),
       pages: path.resolve(__dirname, 'src/pages'),

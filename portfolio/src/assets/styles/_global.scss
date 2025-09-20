@@ -1,4 +1,6 @@
+@use "./variables" as vars;
 @use "./mixins" as mix;
+@use "./functions" as fn;
 
 :root {
   --color-neutral-100: #fff;
@@ -86,4 +88,8 @@ body {
 .visually-visible {
   opacity: 1 !important;
   visibility: visible !important;
+}
+
+.container {
+  max-width: 1440px;
 }

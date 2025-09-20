@@ -1,0 +1,39 @@
+@use "assets/styles/mixins" as mix;
+@use "assets/styles/functions" as fn;
+
+.hamburger-menu {
+  $this: &;
+
+  width: fn.to-rem(60px);
+  height: fn.to-rem(60px);
+
+  @include mix.hover {
+    #{$this}__inner {
+      &::before,
+      &::after {
+        background-color: var(--color-primary-100);
+      }
+    }
+  }
+
+  &__inner {
+    width: 33.33%;
+    height: 16.67%;
+
+    &::before,
+    &::after {
+      @include mix.transition(background-color);
+
+      content: "";
+      display: block;
+      height: fn.to-rem(2px);
+      background-color: var(--color-neutral-100);
+    }
+
+    &::before {
+      width: 60%;
+      height: fn.to-rem(2px);
+      margin-inline-start: auto;
+    }
+  }
+}

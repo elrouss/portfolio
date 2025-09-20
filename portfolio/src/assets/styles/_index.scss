@@ -5,4 +5,13 @@
 @use "./fonts";
 @use "./typography";
 @use "./global";
+@use "./display";
 @use "./spacing";
+@use "./themes";
+
+@use "blocks/hamburger-menu/hamburger-menu" as hamburger-menu;
+@use "blocks/header/header" as header;
+@use "blocks/icon/icon" as icon;
+@use "blocks/link/link" as link;
+@use "blocks/logo/logo" as logo;
+@use "blocks/nav/nav" as nav;

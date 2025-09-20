@@ -1,13 +1,15 @@
 @use "sass:map";
 
-$breakpoints: (
+$grid-breakpoints: (
   l: 1440,
   m: 1024,
   s: 768,
-  xs: 380
+  xs: 380,
+  xxs: 320
 );
 
-$media-l: map.get($breakpoints, l);
-$media-m: map.get($breakpoints, m);
-$media-s: map.get($breakpoints, s);
-$media-xs: map.get($breakpoints, xs);
+$grid-breakpoint-l: map.get($grid-breakpoints, l);
+$grid-breakpoint-m: map.get($grid-breakpoints, m);
+$grid-breakpoint-s: map.get($grid-breakpoints, s);
+$grid-breakpoint-xs: map.get($grid-breakpoints, xs);
+$grid-breakpoint-xxs: map.get($grid-breakpoints, xxs);

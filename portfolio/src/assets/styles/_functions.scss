@@ -21,8 +21,8 @@
   $min-value-rem: to-rem($min-value);
   $max-value-rem: to-rem($max-value);
 
-  $min-breakpoint: map.get(vars.$breakpoints, $min-viewport);
-  $max-breakpoint: map.get(vars.$breakpoints, $max-viewport) - 1;
+  $min-breakpoint: map.get(vars.$grid-breakpoints, $min-viewport);
+  $max-breakpoint: map.get(vars.$grid-breakpoints, $max-viewport) - 1;
 
   $variable-part: math.div(
     $max-value - $min-value,
