@@ -1,0 +1,16 @@
+@use "assets/styles/mixins" as mix;
+
+.about {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include mix.media("m") {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__picture {
+    aspect-ratio: 1;
+  }
+}

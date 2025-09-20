@@ -9,6 +9,7 @@
 @use "./spacing";
 @use "./themes";
 
+@use "blocks/about/about" as about;
 @use "blocks/accordion/accordion" as accordion;
 @use "blocks/button/button" as button;
 @use "blocks/contacts/contacts" as contacts;
@@ -21,6 +22,7 @@
 @use "blocks/link/link" as link;
 @use "blocks/logo/logo" as logo;
 @use "blocks/nav/nav" as nav;
+@use "blocks/picture/picture" as picture;
 @use "blocks/pricing-card/pricing-card" as pricing-card;
 @use "blocks/pricing-card-list/pricing-card-list" as pricing-card-list;
 @use "blocks/wrapper/wrapper" as wrapper;

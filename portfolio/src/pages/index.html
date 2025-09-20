@@ -22,7 +22,7 @@
         <nav class="nav d-none-s">
           <ul class="nav__list d-flex gap-6">
             <li class="nav__list-item">
-              <a href="#" class="link h-4">About me</a>
+              <a href="#about" class="link h-4">About me</a>
             </li>
             <li class="nav__list-item">
               <a href="#" class="link h-4">Portfolio</a>
@@ -54,12 +54,99 @@
     </header>
 
     <main>
+      <section id="about" class="light-theme">
+        <div class="wrapper gap-6 py-7 about__wrapper">
+          <div class="d-flex flex-column gap-6">
+            <picture class="picture about__picture">
+              <source
+                media="(max-width: 767px)"
+                srcset="../assets/images/photographer-1-380.webp"
+              />
+
+              <source
+                media="(max-width: 1279px)"
+                srcset="../assets/images/photographer-1-768.webp"
+              />
+
+              <img
+                class="picture__img"
+                src="../assets/images/photographer-1.webp"
+                alt="Vera is in a coffee shop"
+              />
+            </picture>
+
+            <header class="about__header">
+              <h2 class="h-2">About&nbsp;me</h2>
+
+              <p class="mt-2 about__text-part-1">
+                Hi! I&rsquo;m Vera, a&nbsp;photographer with 5&nbsp;years
+                of&nbsp;experience. For&nbsp;me, photography is&nbsp;more than
+                just an&nbsp;image. It&rsquo;s a&nbsp;way to&nbsp;feel the
+                moment, capture the atmosphere, and freeze time. I&nbsp;work
+                with people, stories, and emotions.
+              </p>
+            </header>
+          </div>
+
+          <div class="d-flex flex-column gap-6">
+            <p class="about__text-part-2">
+              I&nbsp;shoot all across Europe. I&nbsp;love natural light, genuine
+              emotions, and beautiful details. Each shot is&nbsp;a&nbsp;small
+              piece of&nbsp;art. My&nbsp;goal is&nbsp;to&nbsp;create timeless
+              images that tell your unique story.
+            </p>
+
+            <picture class="picture about__picture">
+              <source
+                media="(max-width: 767px)"
+                srcset="../assets/images/photographer-2-380.webp"
+              />
+
+              <source
+                media="(max-width: 1279px)"
+                srcset="../assets/images/photographer-2-768.webp"
+              />
+
+              <img
+                class="picture__img"
+                src="../assets/images/photographer-2.webp"
+                alt="Vera is in Barcelona"
+              />
+            </picture>
+          </div>
+
+          <div class="d-flex flex-column gap-6">
+            <picture class="picture d-none-s about__picture">
+              <source
+                media="(max-width: 767px)"
+                srcset="../assets/images/photographer-3-380.webp"
+              />
+
+              <source
+                media="(max-width: 1279px)"
+                srcset="../assets/images/photographer-3-768.webp"
+              />
+
+              <img
+                class="picture__img"
+                src="../assets/images/photographer-3.webp"
+                alt="Vera is in London"
+              />
+            </picture>
+
+            <p class="about__text-part-3">
+              Seeing with heart. Shooting with soul.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section id="price" class="light-theme">
         <div class="wrapper py-7">
           <header>
             <h2 class="h-2">Packages &amp;&nbsp;Pricing</h2>
 
-            <p class="mt-2 body-base">
+            <p class="mt-2">
               Choose the package that suits your story. All options are
               customizable to&nbsp;your needs.
             </p>
@@ -73,7 +160,7 @@
                     <h3 class="h-3">Mini</h3>
                   </header>
 
-                  <ul class="d-flex flex-column gap-0 body-base mt-2">
+                  <ul class="d-flex flex-column gap-0 mt-2">
                     <li
                       class="pricing-card__details-list-item d-flex align-items-center"
                     >
@@ -126,7 +213,7 @@
                     <h3 class="h-3">Classic</h3>
                   </header>
 
-                  <ul class="d-flex flex-column gap-0 body-base mt-2">
+                  <ul class="d-flex flex-column gap-0 mt-2">
                     <li
                       class="pricing-card__details-list-item d-flex align-items-center"
                     >
@@ -189,7 +276,7 @@
                     <h3 class="h-3">Story</h3>
                   </header>
 
-                  <ul class="d-flex flex-column gap-0 body-base mt-2">
+                  <ul class="d-flex flex-column gap-0 mt-2">
                     <li
                       class="pricing-card__details-list-item d-flex align-items-center"
                     >
@@ -257,7 +344,7 @@
                     <h3 class="h-3">Wedding</h3>
                   </header>
 
-                  <ul class="d-flex flex-column gap-0 body-base mt-2">
+                  <ul class="d-flex flex-column gap-0 mt-2">
                     <li
                       class="pricing-card__details-list-item d-flex align-items-center"
                     >
@@ -328,7 +415,7 @@
           <header class="faq__header">
             <h2 class="h-2">Frequently Asked Questions</h2>
 
-            <p class="mt-2 body-base">
+            <p class="mt-2">
               Everything You Wanted to&nbsp;Ask (and a&nbsp;Bit More)
             </p>
           </header>
@@ -353,7 +440,7 @@
 
               <p
                 id="faq-accordion-sect-1"
-                class="accordion__panel pb-4 body-base"
+                class="accordion__panel pb-4"
                 role="region"
                 aria-labelledby="faq-accordion-1-id"
               >
@@ -385,7 +472,7 @@
 
               <p
                 id="faq-accordion-sect-2"
-                class="accordion__panel d-none pb-4 body-base"
+                class="accordion__panel d-none pb-4"
                 role="region"
                 aria-labelledby="faq-accordion-2-id"
               >
@@ -416,7 +503,7 @@
 
               <p
                 id="faq-accordion-sect-3"
-                class="accordion__panel d-none pb-4 body-base"
+                class="accordion__panel d-none pb-4"
                 role="region"
                 aria-labelledby="faq-accordion-3-id"
               >
@@ -447,7 +534,7 @@
 
               <p
                 id="faq-accordion-sect-4"
-                class="accordion__panel d-none pb-4 body-base"
+                class="accordion__panel d-none pb-4"
                 role="region"
                 aria-labelledby="faq-accordion-4-id"
               >
@@ -479,7 +566,7 @@
 
               <p
                 id="faq-accordion-sect-5"
-                class="accordion__panel d-none pb-4 body-base"
+                class="accordion__panel d-none pb-4"
                 role="region"
                 aria-labelledby="faq-accordion-5-id"
               >
@@ -511,7 +598,7 @@
 
               <p
                 id="faq-accordion-sect-6"
-                class="accordion__panel d-none pb-4 body-base"
+                class="accordion__panel d-none pb-4"
                 role="region"
                 aria-labelledby="faq-accordion-6-id"
               >
@@ -542,7 +629,7 @@
 
               <p
                 id="faq-accordion-sect-7"
-                class="accordion__panel d-none pb-4 body-base"
+                class="accordion__panel d-none pb-4"
                 role="region"
                 aria-labelledby="faq-accordion-7-id"
               >
@@ -573,7 +660,7 @@
 
               <p
                 id="faq-accordion-sect-8"
-                class="accordion__panel d-none pb-4 body-base"
+                class="accordion__panel d-none pb-4"
                 role="region"
                 aria-labelledby="faq-accordion-8-id"
               >
