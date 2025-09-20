@@ -9,9 +9,13 @@
 @use "./spacing";
 @use "./themes";
 
+@use "blocks/button/button" as button;
 @use "blocks/hamburger-menu/hamburger-menu" as hamburger-menu;
 @use "blocks/header/header" as header;
 @use "blocks/icon/icon" as icon;
 @use "blocks/link/link" as link;
 @use "blocks/logo/logo" as logo;
 @use "blocks/nav/nav" as nav;
+@use "blocks/pricing-card/pricing-card" as pricing-card;
+@use "blocks/pricing-card-list/pricing-card-list" as pricing-card-list;
+@use "blocks/wrapper/wrapper" as wrapper;

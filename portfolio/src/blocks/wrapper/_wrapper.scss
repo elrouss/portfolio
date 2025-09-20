@@ -1,0 +1,11 @@
+@use "assets/styles/mixins" as mix;
+@use "assets/styles/functions" as fn;
+
+.wrapper {
+  max-width: fn.to-rem(1400px);
+  margin-inline: auto;
+
+  @include mix.media("l") {
+    margin-inline: calc(var(--spacer) * 5);
+  }
+}
