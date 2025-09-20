@@ -46,9 +46,9 @@
 
 @mixin hide-scrollbar {
   overflow: hidden;
-  scrollbar-width: none; // Chrome, Safari, Firefox
+  scrollbar-width: none;
 
   &::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
+    display: none;
   }
 }

@@ -1,6 +1,15 @@
 @use "./mixins" as mix;
 
 :root {
+  --color-neutral-100: #fff;
+  --color-neutral-400: #989898;
+  --color-neutral-800: #222;
+  --color-neutral-900: #1e1e1e;
+
+  --color-primary-100: #ff3c3c;
+
+  --spacer: 0.25rem;
+
   --transition-duration-basic: 0.3s;
   --transition-easing-func: ease-in-out;
 }
