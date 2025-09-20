@@ -34,7 +34,7 @@
               <a href="#faq" class="link">FAQ</a>
             </li>
             <li class="nav__list-item">
-              <a href="#" class="link">Contacts</a>
+              <a href="#contacts" class="link">Contacts</a>
             </li>
           </ul>
         </nav>
@@ -53,6 +53,7 @@
       </div>
     </header>
 
+    <!-- TODO: wrap inside main -->
     <section id="price" class="light-theme">
       <div class="wrapper py-7">
         <header>
@@ -581,6 +582,41 @@
             </p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="contacts light-theme">
+      <div class="wrapper d-flex flex-column align-items-center pt-6 pb-4">
+        <header>
+          <h2 class="h-3">
+            Like my&nbsp;portfolio? Sign up&nbsp;for a&nbsp;shoot!
+          </h2>
+        </header>
+
+        <form class="contacts__form d-flex flex-column-xs gap-1 mt-4">
+          <input
+            class="input px-2 h-4 contacts__input"
+            type="text"
+            name="name"
+            placeholder="Your name"
+            autocomplete="name"
+          />
+
+          <input
+            class="input px-2 h-4 contacts__input"
+            type="tel"
+            name="tel"
+            value="+1"
+            autocomplete="tel"
+          />
+
+          <button
+            class="button px-4 py-3 h-4 contacts__submit-button"
+            type="submit"
+          >
+            Book now
+          </button>
+        </form>
       </div>
     </section>
   </body>
