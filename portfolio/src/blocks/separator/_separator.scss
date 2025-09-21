@@ -1,0 +1,14 @@
+@use "assets/styles/functions" as fn;
+
+.separator {
+  flex-grow: 1;
+  background-color: var(--color-neutral-100);
+
+  &_horizontal {
+    height: fn.to-rem(1px);
+  }
+
+  &_vertical {
+    width: fn.to-rem(1px);
+  }
+}
