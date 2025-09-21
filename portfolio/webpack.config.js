@@ -26,11 +26,11 @@ export default {
     path: path.resolve(__dirname, 'dist/portfolio'),
     clean: true
   },
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: 'all'
-  //   }
-  // },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   devServer: {
     static: path.resolve(__dirname, './dist/portfolio'),
     port: 8080,
