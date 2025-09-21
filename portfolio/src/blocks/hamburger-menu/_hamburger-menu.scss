@@ -4,8 +4,8 @@
 .hamburger-menu {
   $this: &;
 
-  width: fn.to-rem(60px);
-  height: fn.to-rem(60px);
+  width: fn.to-rem(20px);
+  height: fn.to-rem(20px);
 
   @include mix.hover {
     #{$this}__inner {
@@ -17,8 +17,8 @@
   }
 
   &__inner {
-    width: 33.33%;
-    height: 16.67%;
+    width: 100%;
+    height: 50%;
 
     &::before,
     &::after {

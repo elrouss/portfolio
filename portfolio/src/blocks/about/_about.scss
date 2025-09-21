@@ -12,5 +12,13 @@
 
   &__picture {
     aspect-ratio: 1;
+
+    &_none {
+      &#{&} {
+        @include mix.media("m") {
+          display: none;
+        }
+      }
+    }
   }
 }
