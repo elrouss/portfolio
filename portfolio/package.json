@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "main": "./src/index.js",
+  "homepage": "https://rolling-scopes-school.github.io/elrouss-JSFE2025Q3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://rolling-scopes-school.github.io/elrouss-JSFE2025Q3.git"
+  },
   "scripts": {
     "build": "webpack",
     "build:dev": "rm -rf dist && webpack --mode=development",
@@ -28,6 +33,7 @@
     "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
     "eslint": "^9.36.0",
+    "gh-pages": "^6.3.0",
     "globals": "^16.4.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.4",
