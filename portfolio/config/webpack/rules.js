@@ -82,7 +82,7 @@ export const rules = [
     ]
   },
   {
-    test: /\.(woff|woff2|ttf)$/i,
+    test: /\.(woff2)$/i,
     type: 'asset/resource',
     generator: {
       filename: 'assets/fonts/[name].[contenthash:8][ext]'
