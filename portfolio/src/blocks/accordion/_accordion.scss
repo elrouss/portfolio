@@ -5,37 +5,45 @@
 .accordion {
   $this: &;
 
-  &__item {
+  interpolate-size: allow-keywords;
+
+  &__details {
+    overflow: hidden;
     border-block-end: fn.to-rem(1px) solid currentcolor;
-  }
 
-  &__header-button {
-    @include mix.transition(color);
+    &::details-content {
+      @include mix.transition((block-size, content-visibility));
 
-    width: 100%;
-    padding-block-end: calc(var(--spacer) * 4 + 1px);
-    font: inherit;
-    text-transform: uppercase;
-    color: currentcolor;
-
-    @include mix.hover {
-      color: var(--color-primary-100);
+      block-size: 0;
+      transition-behavior: allow-discrete;
     }
 
-    &_expanded {
-      #{$this}__header-icon {
+    &[open] {
+      &::details-content {
+        block-size: auto;
+      }
+
+      #{$this}__summary-icon {
         &::before {
-          transform: rotate(0deg);
+          transform: rotate(90deg) scaleX(0);
         }
       }
     }
   }
 
-  &__header-text {
-    text-align: start;
+  &__summary {
+    @include mix.transition(color);
+
+    padding-block-end: calc(var(--spacer) * 4 + 1px);
+    user-select: none;
+    cursor: pointer;
+
+    @include mix.hover {
+      color: var(--color-primary-100);
+    }
   }
 
-  &__header-icon {
+  &__summary-icon {
     position: relative;
     top: calc(var(--spacer) / 2);
     width: fn.to-rem(24px);
@@ -54,6 +62,8 @@
     }
 
     &::before {
+      @include mix.transition(transform);
+
       transform: rotate(90deg);
     }
   }

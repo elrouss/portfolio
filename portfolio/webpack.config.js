@@ -45,6 +45,7 @@ export default {
       blocks: path.resolve(__dirname, 'src/blocks'),
       constants: path.resolve(__dirname, 'src/constants'),
       pages: path.resolve(__dirname, 'src/pages'),
+      services: path.resolve(__dirname, 'src/services'),
       utils: path.resolve(__dirname, 'src/utils')
     }
   }
