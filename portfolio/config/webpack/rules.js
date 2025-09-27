@@ -1,6 +1,6 @@
 import path from 'path';
 
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+// import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import PostCssPresetEnvPlugin from 'postcss-preset-env';
 
 export const rules = [
@@ -23,30 +23,8 @@ export const rules = [
     }
   },
   {
-    test: /\.html$/,
+    test: /_critical\.(css|scss)$/i,
     use: [
-      {
-        loader: 'html-loader',
-        options: {
-          sources: {
-            list: [
-              '...',
-              {
-                tag: 'use',
-                attribute: 'xlink:href',
-                type: 'src',
-                filter: () => false
-              }
-            ]
-          }
-        }
-      }
-    ]
-  },
-  {
-    test: /\.(css|scss)$/i,
-    use: [
-      MiniCssExtractPlugin.loader,
       'css-loader',
       {
         loader: 'postcss-loader',
@@ -60,7 +38,23 @@ export const rules = [
     ]
   },
   {
-    test: /\.(png|jpg|jpeg|webp)$/i,
+    test: /\.(css|scss)$/i,
+    exclude: /_critical\.(css|scss)$/i,
+    use: [
+      'css-loader',
+      {
+        loader: 'postcss-loader',
+        options: {
+          postcssOptions: {
+            plugins: [PostCssPresetEnvPlugin()]
+          }
+        }
+      },
+      'sass-loader'
+    ]
+  },
+  {
+    test: /\.(png|jpg|jpeg|webp|ico)$/i,
     type: 'asset/resource',
     generator: {
       filename: 'assets/images/[name].[contenthash:8][ext]'
@@ -85,7 +79,7 @@ export const rules = [
     test: /\.(woff2)$/i,
     type: 'asset/resource',
     generator: {
-      filename: 'assets/fonts/[name].[contenthash:8][ext]'
+      filename: 'assets/fonts/[name][ext]'
     }
   }
 ];

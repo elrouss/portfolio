@@ -18,18 +18,9 @@ export default {
   mode,
   target,
   devtool,
-  entry: {
-    index: './src/index.js'
-  },
   output: {
-    filename: '[name].[contenthash:8].js',
     path: path.resolve(__dirname, 'dist/portfolio'),
     clean: true
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    }
   },
   devServer: {
     static: path.resolve(__dirname, './dist/portfolio'),
@@ -53,7 +44,6 @@ export default {
       assets: path.resolve(__dirname, 'src/assets'),
       blocks: path.resolve(__dirname, 'src/blocks'),
       constants: path.resolve(__dirname, 'src/constants'),
-      docs: path.resolve(__dirname, 'src/docs'),
       pages: path.resolve(__dirname, 'src/pages'),
       utils: path.resolve(__dirname, 'src/utils')
     }
