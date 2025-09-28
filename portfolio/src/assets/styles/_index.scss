@@ -3,13 +3,20 @@
 @use "./mixins";
 @use "./functions";
 
-@use "blocks/accordion/accordion" as accordion;
-@use "blocks/contacts/contacts" as contacts;
-@use "blocks/faq/faq" as faq;
-@use "blocks/footer/footer" as footer;
-@use "blocks/input/input" as input;
 @use "blocks/link/link" as link;
+@use "blocks/input/input" as input;
+
 @use "blocks/portfolio/portfolio" as portfolio;
-@use "blocks/pricing-card/pricing-card" as pricing-card;
-@use "blocks/pricing-card-list/pricing-card-list" as pricing-card-list;
 @use "blocks/slider/slider" as slider;
+
+@use "blocks/pricing-card-list/pricing-card-list" as pricing-card-list;
+@use "blocks/pricing-card/pricing-card" as pricing-card;
+
+@use "blocks/faq/faq" as faq;
+@use "blocks/accordion/accordion" as accordion;
+
+@use "blocks/contacts/contacts" as contacts;
+
+@use "blocks/footer/footer" as footer;
+
+@use "blocks/drawer/drawer" as drawer;

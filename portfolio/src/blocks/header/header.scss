@@ -1,7 +1,14 @@
+@use "assets/styles/variables" as var;
 @use "assets/styles/functions" as fn;
 
 .header {
   &__wrapper {
     min-height: fn.to-rem(60px);
+  }
+
+  &__nav {
+    @media (width <= #{var.$grid-breakpoint-s}px) {
+      display: none;
+    }
   }
 }

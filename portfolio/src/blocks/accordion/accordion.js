@@ -9,7 +9,7 @@ class Accordion {
   #detailsList = null;
 
   constructor(rootElement) {
-    this.#rootElement = rootElement;
+    this.#rootElement = rootElement || null;
 
     this.#detailsList = this.#rootElement.querySelectorAll('details');
 

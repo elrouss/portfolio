@@ -1,0 +1,176 @@
+@use "assets/styles/variables" as var;
+@use "assets/styles/mixins" as mix;
+@use "assets/styles/functions" as fn;
+
+@keyframes transform-hamburger-before {
+  0% {
+    inset-block-start: 0;
+    width: 60%;
+    transform: rotate(0);
+  }
+
+  33% {
+    inset-block-start: 0;
+    width: 100%;
+    transform: rotate(0);
+  }
+
+  66% {
+    inset-block-start: 50%;
+    width: 100%;
+    transform: rotate(0);
+  }
+
+  100% {
+    inset-block-start: 50%;
+    width: 100%;
+    transform: rotate(-45deg);
+  }
+}
+@keyframes transform-hamburger-before-reverse {
+  0% {
+    inset-block-start: 50%;
+    width: 100%;
+    transform: rotate(-45deg);
+  }
+
+  33% {
+    inset-block-start: 50%;
+    width: 100%;
+    transform: rotate(0);
+  }
+
+  66% {
+    inset-block-start: 0;
+    width: 100%;
+    transform: rotate(0);
+  }
+
+  1000% {
+    inset-block-start: 0;
+    width: 60%;
+    transform: rotate(0);
+  }
+}
+@keyframes transform-hamburger-after {
+  0% {
+    inset-block-start: 100%;
+    transform: rotate(0);
+  }
+
+  33% {
+    inset-block-start: 100%;
+    transform: rotate(0);
+  }
+
+  66% {
+    inset-block-start: 50%;
+    transform: rotate(0);
+  }
+
+  100% {
+    inset-block-start: 50%;
+    transform: rotate(45deg);
+  }
+}
+@keyframes transform-hamburger-after-reverse {
+  0% {
+    inset-block-start: 50%;
+    transform: rotate(45deg);
+  }
+
+  33% {
+    inset-block-start: 50%;
+    transform: rotate(0);
+  }
+
+  66% {
+    inset-block-start: 100%;
+    transform: rotate(0);
+  }
+
+  100% {
+    inset-block-start: 100%;
+    transform: rotate(0);
+  }
+}
+
+.hamburger {
+  $this: &;
+  $animation-duration: calc(var(--transition-duration-basic) * 1.5);
+
+  width: fn.to-rem(20px);
+  height: fn.to-rem(20px);
+
+  @include mix.hover {
+    #{$this}__inner {
+      &::before,
+      &::after {
+        background-color: var(--color-primary-100);
+      }
+    }
+  }
+
+  @media (width <= #{var.$grid-breakpoint-s}px) {
+    display: inline-flex;
+  }
+
+  &_open {
+    #{$this}__inner {
+      &::before {
+        animation: transform-hamburger-before $animation-duration
+          var(--transition-easing-func) forwards;
+      }
+
+      &::after {
+        animation: transform-hamburger-after $animation-duration
+          var(--transition-easing-func) forwards;
+      }
+    }
+  }
+
+  &_close {
+    #{$this}__inner {
+      &::before {
+        animation: transform-hamburger-before-reverse $animation-duration
+          var(--transition-easing-func) forwards;
+      }
+
+      &::after {
+        animation: transform-hamburger-after-reverse $animation-duration
+          var(--transition-easing-func) forwards;
+      }
+    }
+  }
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: 50%;
+
+    &::before,
+    &::after {
+      @include mix.transition(background-color);
+
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: fn.to-rem(2px);
+      background-color: var(--color-neutral-100);
+    }
+
+    &::before {
+      inset-block-start: 0;
+      inset-inline-end: 0;
+      width: 60%;
+      height: fn.to-rem(2px);
+      margin-inline-start: auto;
+    }
+
+    &::after {
+      inset-block-start: 100%;
+      inset-inline-start: 0;
+    }
+  }
+}
