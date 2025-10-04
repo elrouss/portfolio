@@ -1122,5 +1122,49 @@
         </ul>
       </nav>
     </div>
+
+    <div
+      class="dialog d-flex flex-column justify-content-center align-items-center visually-hidden"
+    >
+      <div class="dialog__wrapper p-7" role="dialog" aria-modal="true">
+        <button
+          class="dialog__close-button d-flex justify-content-center align-items-center"
+          type="button"
+          aria-label="Close dialog"
+        >
+          <span class="dialog__close-button-icon"></span>
+        </button>
+
+        <h2 class="h-3 dialog__heading">
+          Like my&nbsp;portfolio? Sign up&nbsp;for a shoot!
+        </h2>
+
+        <form class="d-flex flex-column gap-1 mt-2">
+          <input
+            class="input px-2 h-4"
+            type="text"
+            name="name"
+            placeholder="Your name"
+            autocomplete="name"
+          />
+
+          <input
+            class="input px-2 h-4"
+            type="tel"
+            name="tel"
+            placeholder="Phone"
+            value="+1"
+            autocomplete="tel"
+          />
+
+          <button
+            class="button px-4 py-3 h-4 contacts__submit-button"
+            type="submit"
+          >
+            Book now
+          </button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
