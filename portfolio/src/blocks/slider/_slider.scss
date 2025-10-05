@@ -4,9 +4,28 @@
 .slider {
   $this: &;
 
+  overflow: hidden;
+  position: relative;
   display: grid;
   max-width: fn.to-rem(1920px);
   min-height: fn.to-rem(654px);
+
+  &__hover-area {
+    position: absolute;
+    z-index: 1;
+    inset-block-start: 0;
+    width: 30%;
+    height: 100%;
+    cursor: pointer;
+
+    &_start {
+      inset-inline-start: 0;
+    }
+
+    &_end {
+      inset-inline-end: 0;
+    }
+  }
 
   &__inner,
   &__slides,
@@ -15,19 +34,19 @@
   }
 
   &__inner {
-    overflow: hidden;
+    width: 100%;
+
+    @include mix.media("l") {
+      width: auto;
+    }
   }
 
   &__slides {
-    // TODO: mock
-    transform: translateX(calc(100% - fn.to-rem(2660px)));
+    position: absolute;
+    touch-action: pan-x;
 
-    @include mix.media("m") {
-      transform: translateX(calc(100% - fn.to-rem(2324px)));
-    }
-
-    @include mix.media("s") {
-      transform: translateX(calc(100% - fn.to-rem(2130px)));
+    &_transition {
+      @include mix.transition(transform);
     }
   }
 

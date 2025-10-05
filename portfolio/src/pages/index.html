@@ -362,8 +362,13 @@
           </header>
 
           <div class="slider mt-6 mx-auto" aria-roledescription="carousel">
-            <div class="slider__inner">
-              <div class="slider__slides d-flex gap-4" aria-live="off">
+            <div class="slider__hover-area slider__hover-area_start"></div>
+
+            <div class="slider__inner wrapper">
+              <div
+                class="slider__slides slider__slides_transition d-flex gap-4"
+                aria-live="off"
+              >
                 <div
                   class="slider__slide d-flex flex-column"
                   role="group"
@@ -557,6 +562,8 @@
                 </div>
               </div>
             </div>
+
+            <div class="slider__hover-area slider__hover-area_end"></div>
           </div>
         </div>
       </section>

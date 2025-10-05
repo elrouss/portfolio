@@ -24,3 +24,8 @@
 @use "blocks/button/button" as button;
 
 @use "blocks/separator/separator" as separator;
+
+// Slider (for correct centering with JS after page init)
+
+@use "blocks/portfolio/portfolio" as portfolio;
+@use "blocks/slider/slider" as slider;
