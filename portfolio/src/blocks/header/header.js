@@ -36,6 +36,8 @@ class Header {
     this.#hamburger?.classList.add('hamburger_open');
     this.#hamburger?.classList.remove('hamburger_close');
     this.#drawer?.classList.remove('drawer_hidden');
+
+    this.#hamburger.setAttribute('aria-pressed', 'true');
   };
 
   #closeDrawer = () => {
@@ -45,6 +47,8 @@ class Header {
 
     this.#hamburger?.classList.remove('hamburger_open');
     this.#drawer?.classList.add('drawer_hidden');
+
+    this.#hamburger.setAttribute('aria-pressed', 'false');
   };
 
   #toggleDrawer = () => {
