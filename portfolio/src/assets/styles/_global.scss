@@ -73,6 +73,10 @@ body {
   line-height: fn.to-rem(24px);
 }
 
+.preload {
+  transition: none !important;
+}
+
 .scroll-lock {
   @include mix.hide-scrollbar;
 

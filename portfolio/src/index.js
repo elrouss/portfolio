@@ -8,6 +8,8 @@ import Slider from './blocks/slider/slider.js';
 import PricingCardList from './blocks/pricing-card-list/pricing-card-list.js';
 import Accordion from './blocks/accordion/accordion.js';
 
+import { enableOnLoadStyle } from './utils/styles.js';
+
 void icons;
 
 Auth.authorize();
@@ -23,3 +25,5 @@ new Header(header);
 new Slider(portfolioSlider);
 new PricingCardList(pricingCardList, bookingDialog);
 new Accordion(faqAccordion);
+
+window.addEventListener('load', enableOnLoadStyle);

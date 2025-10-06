@@ -25,7 +25,7 @@
 
       #{$this}__summary-icon {
         &::before {
-          transform: rotate(90deg) scaleX(0);
+          transform: scaleY(0);
         }
       }
     }
@@ -55,8 +55,6 @@
       content: "";
       @extend %position-center;
 
-      width: 66.67%;
-      height: fn.to-rem(2px);
       border-radius: fn.to-rem(10px);
       background-color: currentcolor;
     }
@@ -64,7 +62,13 @@
     &::before {
       @include mix.transition(transform);
 
-      transform: rotate(90deg);
+      width: fn.to-rem(2px);
+      height: 66.67%;
+    }
+
+    &::after {
+      width: 66.67%;
+      height: fn.to-rem(2px);
     }
   }
 }
