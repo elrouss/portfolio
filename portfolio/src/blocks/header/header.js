@@ -1,5 +1,4 @@
 import { convertToRem } from '../../utils/styles.js';
-import { throttle } from 'utils/throttle.js';
 
 import { BREAKPOINTS } from 'constants/breakpoints.js';
 import { TRANSITION_DURATION_BASIC } from 'constants/transition.js';
@@ -25,7 +24,7 @@ class Header {
     this.#hamburger?.addEventListener('click', this.#toggleDrawer);
     this.#drawerNav?.addEventListener('click', this.#handleDrawerNavLinkClick);
 
-    window.addEventListener('resize', throttle(this.#setDrawerStyle));
+    window.addEventListener('resize', this.#setDrawerStyle);
   }
 
   #openDrawer = () => {
@@ -83,7 +82,7 @@ class Header {
 
     const { clientWidth } = document.documentElement;
 
-    if (clientWidth >= BREAKPOINTS.s) {
+    if (clientWidth > BREAKPOINTS.s) {
       this.#closeDrawer();
     }
   };
