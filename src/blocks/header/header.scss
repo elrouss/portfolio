@@ -1,5 +1,5 @@
-@use "assets/styles/variables" as var;
-@use "assets/styles/functions" as fn;
+@use "@/assets/styles/variables" as var;
+@use "@/assets/styles/functions" as fn;
 
 .header {
   &__wrapper {
