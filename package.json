@@ -19,7 +19,7 @@
     "stylelint": "npx stylelint \"src/**/*.{css,scss}\"",
     "stylelint:fix": "npx stylelint \"src/**/*.{css,scss}\" --fix",
     "prettier": "npx prettier --write .",
-    "prepare": "cd .. && husky portfolio/.husky"
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "Boris Zashliapin <elrouss.dev@yandex.ru>",
