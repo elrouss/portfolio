@@ -1,0 +1,22 @@
+$fonts:
+  "Oswald" 300,
+  "Oswald" 400,
+  "Mulish" 400,
+  "Mulish-Italic" 400 "italic",
+  "Mulish" 500;
+
+@mixin font($font-family, $font-weight, $font-style: normal) {
+  $file-name: #{$font-family}-#{$font-weight};
+
+  @font-face {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-display: swap;
+    src: url("../fonts/#{$file-name}.woff2") format("woff2");
+  }
+}
+
+@each $font-family, $font-weight, $font-style in $fonts {
+  @include font($font-family, $font-weight);
+}

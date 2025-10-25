@@ -1,0 +1,93 @@
+@use "./variables" as vars;
+@use "./mixins" as mix;
+@use "./functions" as fn;
+
+:root {
+  --color-neutral-100: #fff;
+  --color-neutral-400: #989898;
+  --color-neutral-800: #222;
+  --color-neutral-900: #1e1e1e;
+
+  --color-primary-100: #ff3c3c;
+
+  --spacer: 0.25rem;
+
+  --transition-duration-basic: 0.3s;
+  --transition-easing-func: ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+a,
+button {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  user-select: none;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+address {
+  font-style: normal;
+}
+
+body {
+  font-family: Mulish, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: fn.to-rem(16px);
+  line-height: fn.to-rem(24px);
+}
+
+.scroll-lock {
+  @include mix.hide-scrollbar;
+
+  touch-action: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visually-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.visually-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}

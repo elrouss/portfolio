@@ -1,0 +1,79 @@
+@use "sass:list";
+
+$spacers:
+  var(--spacer), calc(var(--spacer) * 2), calc(var(--spacer) * 3),
+  calc(var(--spacer) * 4 + calc(var(--spacer) / 2)), calc(var(--spacer) * 5),
+  calc(var(--spacer) * 6), calc(var(--spacer) * 10), calc(var(--spacer) * 15);
+
+@for $i from 1 through list.length($spacers) {
+  $index: $i - 1;
+  $list-value: list.nth($spacers, $i);
+
+  .#{mt-#{$index}} {
+    margin-block-start: $list-value;
+  }
+
+  .#{mb-#{$index}} {
+    margin-block-end: $list-value;
+  }
+
+  .#{ms-#{$index}} {
+    margin-inline-start: $list-value;
+  }
+
+  .#{me-#{$index}} {
+    margin-inline-end: $list-value;
+  }
+
+  .#{mx-#{$index}} {
+    margin-inline: $list-value;
+  }
+
+  .#{my-#{$index}} {
+    margin-block: $list-value;
+  }
+
+  .#{m-#{$index}} {
+    margin: $list-value;
+  }
+
+  .#{pt-#{$index}} {
+    padding-block-start: $list-value;
+  }
+
+  .#{pb-#{$index}} {
+    padding-block-end: $list-value;
+  }
+
+  .#{ps-#{$index}} {
+    padding-inline-start: $list-value;
+  }
+
+  .#{pe-#{$index}} {
+    padding-inline-end: $list-value;
+  }
+
+  .#{px-#{$index}} {
+    padding-inline: $list-value;
+  }
+
+  .#{py-#{$index}} {
+    padding-block: $list-value;
+  }
+
+  .#{gap-#{$index}} {
+    gap: $list-value;
+  }
+
+  .#{p-#{$index}} {
+    padding: $list-value;
+  }
+}
+
+.mt-auto {
+  margin-block-start: auto;
+}
+
+.mx-auto {
+  margin-inline: auto;
+}

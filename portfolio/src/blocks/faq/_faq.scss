@@ -1,0 +1,15 @@
+@use "assets/styles/mixins" as mix;
+
+.faq {
+  &__header,
+  &__accordion {
+    width: calc(50% - var(--spacer) * 5);
+  }
+
+  @include mix.media("m") {
+    &__header,
+    &__accordion {
+      width: 100%;
+    }
+  }
+}

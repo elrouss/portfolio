@@ -1,0 +1,7 @@
+@use "assets/styles/functions" as fn;
+
+.logo {
+  width: fn.to-rem(20px);
+  height: fn.to-rem(20px);
+  color: var(--color-primary-100);
+}

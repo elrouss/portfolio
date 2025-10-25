@@ -1,0 +1,13 @@
+@use "assets/styles/mixins" as mix;
+
+.button {
+  text-transform: uppercase;
+  color: var(--color-neutral-100);
+  background-color: var(--color-neutral-800);
+  @include mix.transition((color, background-color));
+
+  @include mix.hover {
+    color: var(--color-neutral-800);
+    background-color: var(--color-primary-100);
+  }
+}

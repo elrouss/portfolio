@@ -1,0 +1,36 @@
+@use "sass:map";
+@use "sass:list";
+@use "./variables" as vars;
+@use "./mixins" as mix;
+
+$display:
+  "d-none" "display" "none",
+  "d-block" "display" "block",
+  "d-inline" "display" "inline",
+  "d-inline-block" "display" "inline-block",
+  "d-flex" "display" "flex",
+  "d-inline-flex" "display" "inline-flex";
+
+$flex-direction:
+  "flex-row" "flex-direction" "row",
+  "flex-column" "flex-direction" "column";
+
+$justify-content:
+  "justify-content-start" "justify-content" "start",
+  "justify-content-end" "justify-content" "end",
+  "justify-content-center" "justify-content" "center",
+  "justify-content-between" "justify-content" "space-between",
+  "justify-content-around" "justify-content" "space-around";
+
+$align-items:
+  "align-items-start" "align-items" "start",
+  "align-items-end" "align-items" "end",
+  "align-items-center" "align-items" "center",
+  "align-items-baseline" "align-items" "baseline",
+  "align-items-stretch" "align-items" "stretch";
+
+$props-map: $display, $flex-direction, $justify-content, $align-items;
+
+@each $prop in $props-map {
+  @include mix.generate-class-names($prop);
+}

@@ -1,0 +1,73 @@
+@use "./mixins" as mix;
+@use "./functions" as fn;
+
+.h-1 {
+  font-family: Oswald, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: fn.to-rem(116px);
+  line-height: fn.to-rem(132px);
+  text-transform: uppercase;
+
+  @include mix.media("l") {
+    font-size: fn.fluid(68px, 116px, "s");
+    line-height: fn.fluid(80px, 132px, "s");
+  }
+
+  @include mix.media("s") {
+    font-size: fn.fluid(56px, 68px, "xs", "s");
+    line-height: fn.fluid(64px, 80px, "xs", "s");
+  }
+}
+
+.h-2 {
+  font-family: Oswald, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: fn.to-rem(32px);
+  line-height: fn.to-rem(40px);
+  text-transform: uppercase;
+}
+
+.h-3 {
+  font-family: Oswald, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: fn.to-rem(20px);
+  line-height: fn.to-rem(28px);
+  text-transform: uppercase;
+}
+
+.h-4 {
+  font-family: Oswald, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: fn.to-rem(16px);
+  line-height: fn.to-rem(24px);
+  text-transform: uppercase;
+}
+
+.body-decoration {
+  font-family: Oswald, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: fn.to-rem(48px);
+  line-height: fn.to-rem(54px);
+}
+
+.body-base {
+  font-family: Mulish, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: fn.to-rem(16px);
+  line-height: fn.to-rem(24px);
+}
+
+.body-base-italic {
+  font-family: Mulish, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: fn.to-rem(16px);
+  line-height: fn.to-rem(20px);
+}
+
+.body-small {
+  font-family: Mulish, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: fn.to-rem(12px);
+  line-height: fn.to-rem(16px);
+}

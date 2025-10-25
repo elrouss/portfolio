@@ -1,0 +1,7 @@
+@use "assets/styles/functions" as fn;
+
+.portfolio {
+  &__inner {
+    max-width: fn.to-rem(360px);
+  }
+}

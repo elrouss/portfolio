@@ -1,0 +1,77 @@
+@use "sass:math";
+@use "sass:list";
+@use "sass:map";
+@use "./variables" as vars;
+
+@mixin media($device-size) {
+  $breakpoint: map.get(vars.$grid-breakpoints, $device-size) - 1;
+
+  @media (width <= #{$breakpoint}px) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin generate-class-names($list) {
+  $grid-breakpoints: map.keys(vars.$grid-breakpoints);
+
+  @each $class-name, $prop-key, $prop-value in $list {
+    @for $i from 1 through list.length($grid-breakpoints) - 1 {
+      @if $i == 1 {
+        .#{$class-name} {
+          #{$prop-key}: #{$prop-value};
+        }
+      } @else {
+        $key: list.nth($grid-breakpoints, $i);
+        $prev-key: list.nth($grid-breakpoints, $i - 1);
+
+        .#{$class-name}-#{$key} {
+          @include media($prev-key) {
+            #{$prop-key}: #{$prop-value};
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin transition(
+  $properties,
+  $duration: var(--transition-duration-basic),
+  $easing-func: var(--transition-easing-func)
+) {
+  $transitions: ();
+
+  @each $property in $properties {
+    $transitions: list.append(
+      $transitions,
+      #{$property} #{$duration} #{$easing-func},
+      "comma"
+    );
+  }
+
+  transition: $transitions;
+}
+
+@mixin line-clamp($num-lines: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $num-lines;
+  -webkit-box-orient: vertical;
+}
+
+@mixin hide-scrollbar {
+  overflow: hidden;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

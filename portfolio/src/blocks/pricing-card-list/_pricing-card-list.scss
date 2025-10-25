@@ -1,0 +1,17 @@
+@use "assets/styles/mixins" as mix;
+
+.pricing-card-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  @include mix.media("m") {
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(var(--spacer) * 5);
+    margin-inline: calc(var(--spacer) * 8 + var(--spacer) / 2);
+  }
+
+  @include mix.media("s") {
+    grid-template-columns: 1fr;
+    margin-inline: calc(var(--spacer) * 2.5);
+  }
+}

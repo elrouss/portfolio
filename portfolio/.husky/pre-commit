@@ -1,0 +1,5 @@
+cd portfolio
+
+npm run prettier
+npm run eslint
+npm run stylelint

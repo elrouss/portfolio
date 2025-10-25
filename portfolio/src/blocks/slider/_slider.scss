@@ -1,0 +1,91 @@
+@use "assets/styles/mixins" as mix;
+@use "assets/styles/functions" as fn;
+
+.slider {
+  $this: &;
+
+  display: grid;
+  max-width: fn.to-rem(1920px);
+  min-height: fn.to-rem(654px);
+
+  &__inner,
+  &__slides,
+  &__slide {
+    height: 100%;
+  }
+
+  &__inner {
+    overflow: hidden;
+  }
+
+  &__slides {
+    // TODO: mock
+    transform: translateX(calc(100% - fn.to-rem(2660px)));
+
+    @include mix.media("m") {
+      transform: translateX(calc(100% - fn.to-rem(2324px)));
+    }
+
+    @include mix.media("s") {
+      transform: translateX(calc(100% - fn.to-rem(2130px)));
+    }
+  }
+
+  &__slide {
+    flex-shrink: 0;
+
+    &:nth-child(12n + 3),
+    &:nth-child(12n + 5),
+    &:nth-child(12n + 11) {
+      picture {
+        margin-block-start: 42.86%;
+      }
+    }
+
+    &:nth-child(6n + 2),
+    &:nth-child(3n + 6) {
+      justify-content: center;
+    }
+
+    &:nth-child(7n + 1) {
+      justify-content: end;
+    }
+
+    &:nth-child(12n) {
+      justify-content: start;
+    }
+
+    &:nth-child(12n + 1),
+    &:nth-child(12n + 4),
+    &:nth-child(12n + 8),
+    &:nth-child(12n) {
+      width: fn.to-rem(400px);
+
+      #{$this}__picture {
+        aspect-ratio: 1 / 1.335;
+      }
+    }
+
+    &:nth-child(12n + 3),
+    &:nth-child(12n + 5),
+    &:nth-child(12n + 7),
+    &:nth-child(12n + 10),
+    &:nth-child(12n + 11) {
+      width: fn.to-rem(280px);
+
+      #{$this}__picture {
+        aspect-ratio: 1 / 1.336;
+      }
+    }
+
+    &:nth-child(12n + 2),
+    &:nth-child(12n + 6),
+    &:nth-child(12n + 9) {
+      width: fn.to-rem(220px);
+
+      #{$this}__picture {
+        aspect-ratio: 1;
+      }
+    }
+  }
+}

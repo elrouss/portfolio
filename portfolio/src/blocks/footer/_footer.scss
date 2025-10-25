@@ -1,0 +1,19 @@
+@use "assets/styles/mixins" as mix;
+@use "assets/styles/functions" as fn;
+
+.footer {
+  &__wrapper {
+    min-height: fn.to-rem(100px);
+
+    @include mix.media("s") {
+      min-height: fn.to-rem(340px);
+      padding-block: calc(var(--spacer) * 9 + var(--spacer) / 2);
+    }
+  }
+
+  &__links-list {
+    @include mix.media("s") {
+      gap: calc(var(--spacer) * 9);
+    }
+  }
+}
