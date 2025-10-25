@@ -8,7 +8,6 @@
 
   min-height: fn.to-rem(500px);
   border: fn.to-rem(1px) solid var(--color-neutral-800);
-  cursor: pointer;
 
   @include mix.hover {
     border-color: var(--color-primary-100);

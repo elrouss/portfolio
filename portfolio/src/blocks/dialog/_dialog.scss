@@ -1,0 +1,78 @@
+@use "assets/styles/placeholders";
+@use "assets/styles/mixins" as mix;
+@use "assets/styles/functions" as fn;
+
+.dialog {
+  $this: &;
+
+  @include mix.transition((opacity, visibility));
+
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background-color: rgb(var(--color-neutral-800-rgb), 0.6);
+
+  &__wrapper {
+    @include mix.transition(transform);
+
+    position: relative;
+    overflow-y: auto;
+    max-width: fn.to-rem(500px);
+    width: 100%;
+    color: var(--color-neutral-800);
+    background-color: var(--color-neutral-100);
+
+    @include mix.media("s") {
+      max-width: fn.fluid(340px, 500px, "xs", "s");
+      padding-inline: fn.fluid(20px, 60px, "xs", "s");
+    }
+  }
+
+  &__close-button {
+    position: absolute;
+    inset-block-start: calc(var(--spacer) * 4.5);
+    inset-inline-end: calc(var(--spacer) * 4.5);
+    width: fn.to-rem(24px);
+    height: fn.to-rem(24px);
+    color: var(--color-neutral-800);
+
+    @include mix.hover {
+      #{$this}__close-button-icon {
+        &::before,
+        &::after {
+          background-color: var(--color-primary-100);
+        }
+      }
+    }
+  }
+
+  &__close-button-icon {
+    position: relative;
+    width: 80%;
+    height: 50%;
+
+    &::before,
+    &::after {
+      @extend %position-center;
+      @include mix.transition(background-color);
+
+      content: "";
+      width: 100%;
+      height: fn.to-rem(2px);
+      border-radius: fn.to-rem(10px);
+      background-color: var(--color-neutral-800);
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__heading {
+    text-align: center;
+  }
+}

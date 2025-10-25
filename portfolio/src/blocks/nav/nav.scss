@@ -1,9 +1,3 @@
-@use "assets/styles/variables" as var;
-
 .nav {
   text-transform: uppercase;
-
-  @media (width <= #{var.$grid-breakpoint-s}px) {
-    display: none;
-  }
 }

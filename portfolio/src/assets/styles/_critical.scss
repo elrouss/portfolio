@@ -14,13 +14,19 @@
 @use "blocks/header/header" as header;
 @use "blocks/hero/hero" as hero;
 @use "blocks/about/about" as about;
+@use "blocks/drawer/drawer" as drawer;
 
 @use "blocks/logo/logo" as logo;
 @use "blocks/nav/nav" as nav;
-@use "blocks/hamburger-menu/hamburger-menu" as hamburger-menu;
+@use "blocks/hamburger/hamburger" as hamburger;
 
 @use "blocks/picture/picture" as picture;
 @use "blocks/icon/icon" as icon;
 @use "blocks/button/button" as button;
 
 @use "blocks/separator/separator" as separator;
+
+// Slider (for correct centering with JS after page init)
+
+@use "blocks/portfolio/portfolio" as portfolio;
+@use "blocks/slider/slider" as slider;
