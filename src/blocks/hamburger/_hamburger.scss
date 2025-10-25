@@ -1,6 +1,6 @@
-@use "assets/styles/variables" as var;
-@use "assets/styles/mixins" as mix;
-@use "assets/styles/functions" as fn;
+@use "@/assets/styles/variables" as var;
+@use "@/assets/styles/mixins" as mix;
+@use "@/assets/styles/functions" as fn;
 
 @keyframes transform-hamburger-before {
   0% {

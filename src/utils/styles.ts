@@ -1,4 +1,5 @@
-export const convertToRem = (size, rootFontSize = 16) => size / rootFontSize;
+export const convertToRem = (size: number, rootFontSize = 16) =>
+  size / rootFontSize;
 
 export const enableOnLoadStyle = () => {
   const preloadElements = document.querySelectorAll('.preload');

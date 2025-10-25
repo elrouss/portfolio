@@ -39,14 +39,15 @@ export default {
     rules
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.ts'],
     alias: {
-      assets: path.resolve(__dirname, 'src/assets'),
-      blocks: path.resolve(__dirname, 'src/blocks'),
-      constants: path.resolve(__dirname, 'src/constants'),
-      pages: path.resolve(__dirname, 'src/pages'),
-      services: path.resolve(__dirname, 'src/services'),
-      utils: path.resolve(__dirname, 'src/utils')
+      '@/assets': path.resolve(__dirname, 'src/assets'),
+      '@/blocks': path.resolve(__dirname, 'src/blocks'),
+      '@/constants': path.resolve(__dirname, 'src/constants'),
+      '@/pages': path.resolve(__dirname, 'src/pages'),
+      '@/services': path.resolve(__dirname, 'src/services'),
+      '@/types': path.resolve(__dirname, 'src/types'),
+      '@/utils': path.resolve(__dirname, 'src/utils')
     }
   }
 };

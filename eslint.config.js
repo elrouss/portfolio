@@ -1,6 +1,7 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
+import tseslint from 'typescript-eslint';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -113,5 +114,6 @@ export default [
   {
     ignores: ['node_modules/*', 'dist/*', 'config/*', 'webpack.config.ts']
   },
-  pluginJs.configs.recommended
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended
 ];

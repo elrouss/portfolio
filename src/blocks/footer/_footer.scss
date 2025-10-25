@@ -1,5 +1,5 @@
-@use "assets/styles/mixins" as mix;
-@use "assets/styles/functions" as fn;
+@use "@/assets/styles/mixins" as mix;
+@use "@/assets/styles/functions" as fn;
 
 .footer {
   &__wrapper {
