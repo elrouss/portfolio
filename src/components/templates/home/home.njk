@@ -1,0 +1,73 @@
+{% import "src/components/organisms/header/header.njk" as Header %}
+{% import "src/components/organisms/hero/hero.njk" as Hero %}
+{% import "src/components/organisms/about/about.njk" as About %}
+{% import "src/components/organisms/portfolio/portfolio.njk" as Portfolio %}
+{% import "src/components/organisms/price/price.njk" as Price %}
+{% import "src/components/organisms/contacts/contacts.njk" as Contacts %}
+{% import "src/components/organisms/faq/faq.njk" as Faq %}
+{% import "src/components/organisms/footer/footer.njk" as Footer %}
+
+{% import "src/components/molecules/drawer/drawer.njk" as Drawer %}
+{% import "src/components/organisms/contact-form-dialog/contact-form-dialog.njk" as ContactFormDialog %}
+
+{% macro home(header, hero, about, portfolio, price, faq, contacts, footer, drawer, contactFormDialog) %}
+  {{ Header.header(nav = header.nav) }}
+
+  <main>
+    {{ Hero.hero(
+      heading = hero.heading,
+      subheading = hero.subheading,
+      description = hero.description,
+      stats = hero.stats,
+      small = hero.small,
+      pictures = hero.pictures,
+      button = hero.button
+    ) }}
+
+    {{ About.about(
+      id = about.id,
+      heading = about.heading,
+      description = about.description,
+      supportingDescription = about.supportingDescription,
+      motto = about.motto,
+      pictures = about.pictures
+    ) }}
+
+    {{ Portfolio.portfolio(
+      id = portfolio.id,
+      heading = portfolio.heading,
+      subheading = portfolio.subheading,
+      slider = portfolio.slider
+    ) }}
+
+    {{ Price.price(
+      id = price.id,
+      heading = price.heading,
+      subheading = price.subheading,
+      list = price.list,
+      button = price.button
+    ) }}
+
+    {{ Faq.faq(
+      id = faq.id,
+      heading = faq.heading,
+      subheading = faq.subheading,
+      accordion = faq.accordion
+    ) }}
+
+    {{ Contacts.contacts(
+      id = contacts.id,
+      heading = contacts.heading,
+      form = contacts.form
+    ) }}
+  </main>
+
+  {{ Footer.footer(links = footer.links) }}
+
+  {{ Drawer.drawer(nav = header.nav) }}
+
+  {{ ContactFormDialog["contact-form-dialog"](
+    heading = contactFormDialog.heading,
+    form = contacts.form
+  ) }}
+{% endmacro %}

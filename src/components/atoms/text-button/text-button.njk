@@ -1,0 +1,28 @@
+{% import "src/components/atoms/icon/icon.njk" as Icon %}
+
+{% macro "text-button"(className, href, icon) %}
+  {% set classAttr = "text-button d-inline-flex align-items-center gap-1" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <a
+    class="{{ classAttr }}"
+    href="{{ href }}"
+  >
+    {{ caller() }}
+
+    <span class="text-button__icon-wrapper d-inline-flex flex-column">
+      {{ Icon.icon(
+        className = "text-button__icon text-button__icon_visible",
+        name = icon
+      ) }}
+
+      {{ Icon.icon(
+        className = "text-button__icon text-button__icon_hidden",
+        name = icon
+      ) }}
+    </span>
+  </a>
+{% endmacro %}

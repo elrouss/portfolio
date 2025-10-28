@@ -3,17 +3,19 @@
 @use "./mixins";
 @use "./functions";
 
-@use "@/blocks/link/link" as link;
-@use "@/blocks/input/input" as input;
+@use "@/components/atoms/link/link" as link;
+@use "@/components/atoms/input/input" as input;
 
-@use "@/blocks/pricing-card-list/pricing-card-list" as pricing-card-list;
-@use "@/blocks/pricing-card/pricing-card" as pricing-card;
+@use "@/components/organisms/pricing-card-list/pricing-card-list" as
+  pricing-card-list;
+@use "@/components/molecules/pricing-card/pricing-card" as pricing-card;
 
-@use "@/blocks/faq/faq" as faq;
-@use "@/blocks/accordion/accordion" as accordion;
+@use "@/components/organisms/faq/faq" as faq;
+@use "@/components/organisms/accordion/accordion" as accordion;
 
-@use "@/blocks/contacts/contacts" as contacts;
+@use "@/components/organisms/contact-form/contact-form" as contact-form;
+@use "@/components/organisms/contacts/contacts" as contacts;
 
-@use "@/blocks/footer/footer" as footer;
+@use "@/components/organisms/footer/footer" as footer;
 
-@use "@/blocks/dialog/dialog" as dialog;
+@use "@/components/organisms/dialog/dialog" as dialog;

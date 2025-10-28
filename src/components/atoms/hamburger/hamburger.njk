@@ -1,0 +1,17 @@
+{% macro hamburger(className) %}
+  {% set classAttr = "hamburger d-none justify-content-center align-items-center" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <button
+    class="{{ classAttr }}"
+    type="button"
+    aria-label="Toggle hamburger menu"
+    aria-haspopup="menu"
+    aria-pressed="false"
+  >
+    <span class="hamburger__inner d-inline-flex flex-column justify-content-between"></span>
+  </button>
+{% endmacro %}

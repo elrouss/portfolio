@@ -1,0 +1,21 @@
+{% import "src/components/atoms/link/link.njk" as Link %}
+
+{% macro nav(className, links) %}
+  {% set classAttr = "nav" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <nav class="{{ classAttr }}">
+    <ul class="nav__list d-flex align-items-center gap-6">
+      {% for link in links %}
+        <li>
+          {% call Link.link(href = link.href) %}
+          {{ link.text }}
+          {% endcall %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endmacro %}

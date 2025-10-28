@@ -1,0 +1,26 @@
+{% import "src/components/organisms/contact-form/contact-form.njk" as ContactForm %}
+
+{% macro contacts(id, className, heading, form) %}
+  {% set classAttr = "contacts light-theme" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <section
+    {% if id %} id="{{ id }}" {% endif %}
+    class="{{ classAttr }}"
+  >
+    <div class="wrapper d-flex flex-column align-items-center pt-6 pb-4">
+      <header>
+        <h2 class="h-3">{{ heading | safe }}</h2>
+      </header>
+
+      {{ ContactForm["contact-form"](
+        className = "contacts__form mt-4",
+        inputs = form.inputs,
+        submitButton = form.submitButton
+      ) }}
+    </div>
+  </section>
+{% endmacro %}

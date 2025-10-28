@@ -1,0 +1,13 @@
+{% import "src/components/atoms/icon/icon.njk" as Icon %}
+
+{% macro logo(className) %}
+  {% set classAttr = "logo d-flex justify-content-center align-items-center" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <div class="{{ classAttr }}">
+    {{ Icon.icon(name="logo") }}
+  </div>
+{% endmacro %}

@@ -1,0 +1,24 @@
+{% import "src/components/molecules/pricing-card/pricing-card.njk" as PricingCard %}
+
+{% macro "pricing-card-list"(className, list, button) %}
+  {% set classAttr = "pricing-card-list gap-6" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <ul class="{{ classAttr }}">
+    {% for item in list %}
+      <li>
+        {{ PricingCard["pricing-card"](
+          heading = item.heading,
+          description = item.description,
+          features = item.features,
+          price = item.price,
+          button = button
+        ) }}
+      </li>
+    {% endfor %}
+  </ul>
+
+{% endmacro %}

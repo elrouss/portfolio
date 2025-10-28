@@ -1,0 +1,31 @@
+{% import "src/components/organisms/slider/slider.njk" as Slider %}
+
+{% macro portfolio(id, className, heading, subheading, slider) %}
+  {% set classAttr = "portfolio dark-theme" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <section
+    {% if id %} id="{{ id }}" {% endif %}
+    class="{{ classAttr }}"
+  >
+    <div class="py-7">
+      <header class="wrapper">
+        <div class="portfolio__inner">
+          <h2 class="h-2">{{ heading | safe }}</h2>
+
+          <p class="mt-2">{{ subheading | safe }}</p>
+        </div>
+      </header>
+
+      {{ Slider.slider(
+        className = "mt-6 mx-auto",
+        slides = slider.slides,
+        lazy = slider.lazy
+      ) }}
+    </div>
+  </div>
+</section>
+{% endmacro %}

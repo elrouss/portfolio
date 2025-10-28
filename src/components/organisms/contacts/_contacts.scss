@@ -1,0 +1,11 @@
+@use "@/assets/styles/mixins" as mix;
+
+.contacts {
+  &__form {
+    width: 69.71%;
+
+    @include mix.media("m") {
+      width: 100%;
+    }
+  }
+}

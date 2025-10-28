@@ -1,0 +1,12 @@
+@use "@/assets/styles/variables" as var;
+
+.nav {
+  text-transform: uppercase;
+
+  &__list {
+    @media (width <= #{var.$grid-breakpoint-s}px) {
+      flex-direction: column;
+      gap: calc(var(--spacer) * 9);
+    }
+  }
+}

@@ -9,24 +9,23 @@
 
 // Above the fold
 
-@use "@/blocks/wrapper/wrapper" as wrapper;
+@use "@/components/organisms/header/header" as header;
+@use "@/components/organisms/hero/hero" as hero;
+@use "@/components/organisms/about/about" as about;
+@use "@/components/molecules/drawer/drawer" as drawer;
 
-@use "@/blocks/header/header" as header;
-@use "@/blocks/hero/hero" as hero;
-@use "@/blocks/about/about" as about;
-@use "@/blocks/drawer/drawer" as drawer;
+@use "@/components/atoms/logo/logo" as logo;
+@use "@/components/molecules/nav/nav" as nav;
+@use "@/components/atoms/hamburger/hamburger" as hamburger;
 
-@use "@/blocks/logo/logo" as logo;
-@use "@/blocks/nav/nav" as nav;
-@use "@/blocks/hamburger/hamburger" as hamburger;
+@use "@/components/atoms/picture/picture" as picture;
+@use "@/components/atoms/icon/icon" as icon;
+@use "@/components/atoms/button/button" as button;
+@use "@/components/atoms/text-button/text-button" as text-button;
 
-@use "@/blocks/picture/picture" as picture;
-@use "@/blocks/icon/icon" as icon;
-@use "@/blocks/button/button" as button;
-
-@use "@/blocks/separator/separator" as separator;
+@use "@/components/atoms/separator/separator" as separator;
 
 // Slider (for correct centering with JS after page init)
 
-@use "@/blocks/portfolio/portfolio" as portfolio;
-@use "@/blocks/slider/slider" as slider;
+@use "@/components/organisms/portfolio/portfolio" as portfolio;
+@use "@/components/organisms/slider/slider" as slider;

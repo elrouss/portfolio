@@ -1,0 +1,36 @@
+{% import "src/components/atoms/button/button.njk" as Button %}
+{% import "src/components/atoms/input/input.njk" as Input %}
+
+{% macro "contact-form"(className, inputs, submitButton, direction = "row") %}
+  {% if direction == "column" %}
+    {% set flexClass = "flex-column" %}
+  {% else %}
+    {% set flexClass = "flex-column-xs" %}
+  {% endif %}
+
+  {% set classAttr = ["contact-form", "d-flex", flexClass, "gap-1"].join(" ").trim() %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <form class="{{ classAttr }}">
+    {% for input in inputs %}
+      {{ Input.input(
+        className = "contact-form__input",
+        type = input.type,
+        name = input.name,
+        value = input.value,
+        placeholder = input.placeholder,
+        autocomplete = input.autocomplete
+      ) }}
+    {% endfor %}
+
+    {% call Button.button(
+      className = "contact-form__submit-button",
+      type = "submit"
+    ) %}
+    {{ submitButton.text }}
+    {% endcall %}
+  </form>
+{% endmacro %}

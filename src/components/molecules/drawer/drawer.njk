@@ -1,0 +1,18 @@
+{% import "src/components/molecules/nav/nav.njk" as Nav %}
+
+{% macro drawer(className, nav) %}
+  {% set classAttr = "drawer drawer_hidden dark-theme preload" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <div
+      class="{{ classAttr }}"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Hamburger menu"
+    >
+    {{ Nav.nav(links=nav) }}
+  </div>
+{% endmacro %}

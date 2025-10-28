@@ -1,0 +1,18 @@
+{% import "src/components/organisms/contact-form/contact-form.njk" as ContactForm %}
+{% import "src/components/organisms/dialog/dialog.njk" as Dialog %}
+
+{% macro "contact-form-dialog"(className, heading, form) %}
+  {% set classAttr = "contact-form-dialog" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  {% call Dialog.dialog(className = className, heading = heading) %}
+  {{ ContactForm["contact-form"](
+    inputs = form.inputs,
+    submitButton = form.submitButton,
+    direction = "column"
+  ) }}
+  {% endcall %}
+{% endmacro %}

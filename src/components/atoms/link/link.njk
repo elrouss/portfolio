@@ -1,0 +1,16 @@
+{% macro link(className, href = "#", target, rel) %}
+  {% set classAttr = "link h-4" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <a
+    class="{{ classAttr }}"
+    href = "{{ href }}"
+    {% if target %} target="{{ target }}"{% endif %}
+    {% if rel %} rel="{{ rel }}"{% endif %}
+  >
+    {{ caller() }}
+  </a>
+{% endmacro %}

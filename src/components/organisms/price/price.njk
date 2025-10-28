@@ -1,0 +1,28 @@
+{% import "src/components/organisms/pricing-card-list/pricing-card-list.njk" as PricingCardList %}
+
+{% macro price(id, className, heading, subheading, list, button) %}
+  {% set classAttr = "price light-theme" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <section
+    {% if id %} id="{{ id }}" {% endif %}
+    class="{{ classAttr }}"
+  >
+    <div class="wrapper py-7">
+      <header>
+        <h2 class="h-2">{{ heading | safe }}</h2>
+
+        <p class="mt-2">{{ subheading | safe }}</p>
+      </header>
+
+      {{ PricingCardList["pricing-card-list"](
+        className = "mt-6",
+        list = list,
+        button = button
+      ) }}
+    </div>
+  </section>
+{% endmacro %}
