@@ -1,16 +1,14 @@
 import { nanoid } from 'nanoid';
 import HtmlBundlerPlugin from 'html-bundler-webpack-plugin';
 import SVGSpriteLoaderPlugin from 'svg-sprite-loader/plugin.js';
+import pageData from '../../src/data/pages/index.json' assert { type: 'json' };
 
 export const plugins = [
   new HtmlBundlerPlugin({
     entry: {
       index: {
-        import: 'src/pages/index.njk'
-        // data: {
-        // header: "test",
-        // people: ['Walter White', 'Jesse Pinkman']
-        // }
+        import: 'src/pages/index.njk',
+        data: pageData
       }
     },
     preprocessor: 'nunjucks',

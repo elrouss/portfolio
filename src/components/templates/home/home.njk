@@ -64,10 +64,10 @@
 
   {{ Footer.footer(links = footer.links) }}
 
-  {{ Drawer.drawer(nav = drawer.nav) }}
+  {{ Drawer.drawer(nav = header.nav) }}
 
   {{ ContactFormDialog["contact-form-dialog"](
     heading = contactFormDialog.heading,
-    form = contactFormDialog.form
+    form = contacts.form
   ) }}
 {% endmacro %}
