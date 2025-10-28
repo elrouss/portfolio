@@ -1,0 +1,25 @@
+{% import "src/components/atoms/link/link.njk" as Link %}
+
+{% macro footer(className, links) %}
+  {% set classAttr = "footer dark-theme" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <footer class="{{ classAttr }}">
+    <div class="wrapper d-flex justify-content-center py-4 footer__wrapper">
+      <ul
+        class="footer__links-list d-flex flex-column-xs justify-content-between align-items-center gap-6"
+      >
+        {% for link in links %}
+          <li>
+            {% call Link.link(href = link.href, target = "_blank", rel = "noopener noreferrer") %}
+            {{ link.text }}
+            {% endcall %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </footer>
+{% endmacro %}

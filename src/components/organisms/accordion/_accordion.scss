@@ -1,0 +1,74 @@
+@use "@/assets/styles/placeholders";
+@use "@/assets/styles/mixins" as mix;
+@use "@/assets/styles/functions" as fn;
+
+.accordion {
+  $this: &;
+
+  interpolate-size: allow-keywords;
+
+  &__details {
+    overflow: hidden;
+    border-block-end: fn.to-rem(1px) solid currentcolor;
+
+    &::details-content {
+      @include mix.transition((block-size, content-visibility));
+
+      block-size: 0;
+      transition-behavior: allow-discrete;
+    }
+
+    &[open] {
+      &::details-content {
+        block-size: auto;
+      }
+
+      #{$this}__summary-icon {
+        &::before {
+          transform: scaleY(0);
+        }
+      }
+    }
+  }
+
+  &__summary {
+    @include mix.transition(color);
+
+    padding-block-end: calc(var(--spacer) * 4 + 1px);
+    user-select: none;
+    cursor: pointer;
+
+    @include mix.hover {
+      color: var(--color-primary-100);
+    }
+  }
+
+  &__summary-icon {
+    position: relative;
+    inset-block-start: calc(var(--spacer) / 2);
+    width: fn.to-rem(24px);
+    height: fn.to-rem(24px);
+    flex-shrink: 0;
+
+    &::before,
+    &::after {
+      content: "";
+      @extend %position-center;
+
+      border-radius: fn.to-rem(10px);
+      background-color: currentcolor;
+    }
+
+    &::before {
+      @include mix.transition(transform);
+
+      width: fn.to-rem(2px);
+      height: 66.67%;
+    }
+
+    &::after {
+      width: 66.67%;
+      height: fn.to-rem(2px);
+    }
+  }
+}

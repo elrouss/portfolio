@@ -1,0 +1,23 @@
+{% macro button(className, type = "button", href) %}
+  {% set classAttr = "button px-4 py-3 h-4" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  {% if href %}
+    <a
+      class="{{ classAttr }}"
+      href="{{ href }}"
+    >
+      {{ caller() }}
+    </a>
+  {% else %}
+    <button
+      class="{{ classAttr }}"
+      type="{{ type }}"
+    >
+      {{ caller() }}
+    </button>
+  {% endif %}
+{% endmacro %}

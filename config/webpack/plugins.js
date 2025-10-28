@@ -4,12 +4,16 @@ import SVGSpriteLoaderPlugin from 'svg-sprite-loader/plugin.js';
 
 export const plugins = [
   new HtmlBundlerPlugin({
-    entry: [
-      {
-        import: 'src/pages/index.html',
-        filename: 'index.html'
+    entry: {
+      index: {
+        import: 'src/pages/index.njk'
+        // data: {
+        // header: "test",
+        // people: ['Walter White', 'Jesse Pinkman']
+        // }
       }
-    ],
+    },
+    preprocessor: 'nunjucks',
     js: {
       filename: '[name].[contenthash:8].js'
     },

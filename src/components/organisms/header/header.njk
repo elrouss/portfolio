@@ -1,0 +1,22 @@
+{% import "src/components/atoms/hamburger/hamburger.njk" as Hamburger %}
+{% import "src/components/atoms/logo/logo.njk" as Logo %}
+
+{% import "src/components/molecules/nav/nav.njk" as Nav %}
+
+{% macro header(className, nav) %}
+  {% set classAttr = "header dark-theme" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <header class="{{ classAttr }}">
+    <div class="wrapper d-flex justify-content-between align-items-center mx-auto header__wrapper">
+      {{ Logo.logo() }}
+
+      {{ Nav.nav(className="header__nav", links=nav) }}
+
+      {{ Hamburger.hamburger() }}
+    </div>
+  </header>
+{% endmacro %}

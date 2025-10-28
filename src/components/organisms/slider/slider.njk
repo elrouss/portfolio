@@ -1,0 +1,42 @@
+{% import "src/components/atoms/picture/picture.njk" as Picture %}
+
+{% macro slider(className, slides, lazy, fetchPriority) %}
+  {% set classAttr = "slider" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <div
+    class="{{ classAttr }}"
+    aria-roledescription="carousel"
+  >
+    <div class="slider__hover-area slider__hover-area_start"></div>
+
+    <div class="slider__inner wrapper">
+      <div
+        class="slider__slides slider__slides_transition d-flex gap-4 preload"
+        aria-live="off"
+      >
+        {% for slide in slides %}
+          <div
+            class="slider__slide d-flex flex-column"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="{{ (loop.index) }} of {{ loop.length }}"
+          >
+            {{ Picture.picture(
+              className = "slider__picture",
+              src = slide.src,
+              alt = slide.alt,
+              lazy = lazy,
+              fetchPriority = fetchPriority
+            ) }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="slider__hover-area slider__hover-area_end"></div>
+  </div>
+{% endmacro %}

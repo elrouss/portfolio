@@ -1,0 +1,26 @@
+{% macro picture(className, src, alt, lazy, fetchPriority, draggable) %}
+  {% set classAttr = "picture" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <picture class="{{ classAttr }}">
+    {% if src["380"] %}
+      <source srcset="{{ src['380'] }}" media="(max-width: 767px)" >
+    {% endif %}
+
+    {% if src["768"] %}
+      <source srcset="{{ src['768'] }}" media="(max-width: 1279px)" >
+    {% endif %}
+
+    <img
+      class="picture__img"
+      src="{{ src['1280'] }}"
+      alt="{{ alt }}"
+      {% if lazy %} loading = "lazy" {% endif %}
+      {% if fetchPriority %} fetchPriority = "{{ fetchPriority }}" {% endif %}
+      {% if draggable %} draggable = "{{ draggable }}" {% endif %}
+    >
+  </picture>
+{% endmacro %}

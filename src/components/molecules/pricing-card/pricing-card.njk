@@ -1,0 +1,35 @@
+{% import "src/components/atoms/button/button.njk" as Button %}
+
+{% macro "pricing-card"(className, heading, description, features, price, button) %}
+  {% set classAttr = "pricing-card d-flex flex-column p-5" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <article class="{{ classAttr }}">
+    <div>
+      <header>
+        <h3 class="h-3">{{ heading | safe }}</h3>
+      </header>
+
+      <ul class="d-flex flex-column gap-0 mt-2">
+        {% for feature in features %}
+          <li class="pricing-card__details-list-item d-flex align-items-center">{{ feature | safe }}</li>
+        {% endfor %}
+      </ul>
+
+      <p class="h-4 mt-2">&euro;{{ price }}</p>
+    </div>
+
+    <footer class="mt-auto">
+      <em class="d-block body-base-italic">{{ description | safe }}</em>
+
+      {% call Button.button(
+      className = "mt-2 pricing-card__button"
+      ) %}
+      {{ button.text }}
+      {% endcall %}
+    </footer>
+  </article>
+{% endmacro %}

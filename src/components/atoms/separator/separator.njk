@@ -1,0 +1,13 @@
+{% macro separator(className, orientation) %}
+  {% set classAttr = [
+    "separator", "separator_" ~ orientation
+  ]
+    .join(" ")
+    .trim() %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <div class="{{ classAttr }}"></div>
+{% endmacro %}

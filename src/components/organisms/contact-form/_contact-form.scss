@@ -1,0 +1,17 @@
+@use "@/assets/styles/mixins" as mix;
+@use "@/assets/styles/functions" as fn;
+
+.contact-form {
+  &__input {
+    flex-grow: 1;
+  }
+
+  &__submit-button {
+    min-width: fn.to-rem(200px);
+
+    @include mix.media("s") {
+      min-width: auto;
+      width: 100%;
+    }
+  }
+}

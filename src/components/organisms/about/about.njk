@@ -1,0 +1,49 @@
+{% import "src/components/atoms/picture/picture.njk" as Picture %}
+
+{% macro about(id, className, heading, description, supportingDescription, motto, pictures) %}
+  {% set classAttr = "about light-theme" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <section
+    {% if id %} id="{{ id }}" {% endif %}
+    class="{{ classAttr }}"
+  >
+    <div class="wrapper gap-6 py-7 about__wrapper">
+      <div class="d-flex flex-column gap-6">
+        {{ Picture.picture(
+          className = "about__picture",
+          src = pictures.primary.src,
+          alt = pictures.primary.alt
+        ) }}
+
+        <header class="about__header">
+          <h2 class="h-2">{{ heading | safe }}</h2>
+
+          <p class="mt-2 about__text-part-1">{{ description | safe }}</p>
+        </header>
+      </div>
+
+      <div class="d-flex flex-column gap-6">
+        <p class="about__text-part-2">{{ supportingDescription | safe }}</p>
+
+        {{ Picture.picture(
+          className = "about__picture",
+          src = pictures.secondary.src,
+          alt = pictures.secondary.alt
+        ) }}
+      </div>
+
+      <div class="d-flex flex-column gap-6">
+        {{ Picture.picture(
+          className = "about__picture about__picture_none",
+          src = pictures.tertiary.src,
+          alt = pictures.tertiary.alt
+        ) }}
+        <p class="about__text-part-3">{{ motto | safe }}</p>
+      </div>
+    </div>
+  </section>
+{% endmacro %}

@@ -1,0 +1,24 @@
+{% import "src/components/organisms/accordion/accordion.njk" as Accordion %}
+
+{% macro faq(id, className, heading, subheading, accordion) %}
+  {% set classAttr = "faq dark-theme" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <section
+    {% if id %} id="{{ id }}" {% endif %}
+    class="{{ classAttr }}"
+  >
+    <div class="wrapper d-flex flex-column-s justify-content-between gap-6 py-7">
+      <header class="faq__header">
+        <h2 class="h-2">{{ heading | safe }}</h2>
+
+        <p class="mt-2">{{ subheading | safe }}</p>
+      </header>
+
+      {{ Accordion.accordion(details = accordion) }}
+    </div>
+  </section>
+{% endmacro %}

@@ -1,0 +1,27 @@
+{% macro accordion(className, details) %}
+  {% set classAttr = "accordion" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <div class="accordion faq__accordion preload">
+    {% for detail in details.details %}
+      <details
+        class="accordion__details"
+        {% if details.name %} name="{{ details.name }}"{% endif %}
+      >
+        <summary
+          class="accordion__summary d-flex justify-content-between gap-1 py-3 h-3"
+          {% if detail.dataId %} data-id="{{ detail.dataId }}"{% endif %}
+        >
+          <span>{{ detail.question | safe }}</span>
+
+          <span class="accordion__summary-icon"></span>
+        </summary>
+
+        <p class="pb-4">{{ detail.answer | safe }}</p>
+      </details>
+    {% endfor %}
+  </div>
+{% endmacro %}

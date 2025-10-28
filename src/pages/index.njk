@@ -1,0 +1,456 @@
+{% import "src/components/templates/home/home.njk" as Home %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="preload" as="font" type="font/woff2" href="@/assets/fonts/Mulish-400.woff2" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="@/assets/fonts/Mulish-500.woff2" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="@/assets/fonts/Oswald-300.woff2" crossorigin/>
+    <link rel="preload" as="font" type="font/woff2" href="@/assets/fonts/Oswald-400.woff2" crossorigin/>
+
+    <title>Vera Photography | Seeing with Heart, Shooting with Soul</title>
+
+    <link rel="icon" type="image/x-icon" href="@/assets/favicon/favicon.ico"/>
+
+    <link rel="stylesheet" href="@/assets/styles/_critical.scss?inline"/>
+
+    <meta property="og:title" content="Vera Photography | Seeing with Heart, Shooting with Soul"/>
+    <meta property="og:description" content="Professional photographer capturing moments across Europe. Specializing in natural light and genuine emotions. Let's create timeless art together"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="@/assets/og/og-facebook.png"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="Self-portrait of Vera"/>
+    <meta property="og:url" content="https://rolling-scopes-school.github.io/elrouss-JSFE2025Q3/portfolio/"/>
+    <meta property="twitter:card" content="summary_large_image"/>
+    <meta property="twitter:title" content="Vera Photography | Seeing with Heart, Shooting with Soul"/>
+    <meta property="twitter:description" content="Professional photographer capturing moments across Europe. Specializing in natural light and genuine emotions. Let's create timeless art together"/>
+    <meta property="twitter:image" content="assets/og/og-twitter.png"/>
+    <meta property="twitter:image:type" content="image/png"/>
+    <meta property="twitter:image:width" content="1200"/>
+    <meta property="twitter:image:height" content="670"/>
+    <meta property="twitter:image:alt" content="Self-portrait of Vera"/>
+
+    <meta name="description" content="Professional photographer capturing moments across Europe. Specializing in natural light and genuine emotions. Let's create timeless art together"/>
+
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="@/assets/favicon/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="@/assets/favicon/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="@/assets/favicon/favicon-16x16.png"/>
+
+    <meta name="theme-color" content="#222"/>
+
+    <link rel="preload" as="style" href="@/assets/styles/_index.scss" onload="this.rel='stylesheet'"/>
+
+    <script src="../index.ts" defer></script>
+  </head>
+  <body>
+
+    {{ Home.home(
+      header = {
+        nav: [
+          {
+            text: "About me",
+            href: "#about"
+          },
+          {
+            text: "Portfolio",
+            href: "#portfolio"
+          },
+          {
+            text: "Price",
+            href: "#price"
+          },
+          {
+            text: "FAQ",
+            href: "#faq"
+          },
+          {
+            text: "Contacts",
+            href: "#contacts"
+          }
+        ]
+      },
+
+      hero = {
+        heading: "Professional photographer",
+        subheading: "Capture the Moment. Tell Your Story.",
+        description: [
+          "Hi! I&rsquo;m Vera, a&nbsp;photographer.",
+          "For&nbsp;me, photography is&nbsp;more",
+          "than just an&nbsp;image."
+        ],
+        stats: [
+          {
+            heading: "Photo sessions",
+            stats: 487
+          },
+          {
+            heading: "Satisfied clients",
+            stats: 356
+          }
+        ],
+        small: {
+          text: "Best Photographer by MAX",
+          date: 2025,
+          datetime: 2025
+        },
+        pictures: {
+          primary: {
+            src: {
+              "1280": "../assets/images/11.webp",
+              "380": "../assets/images/11-768.webp"
+            },
+            alt: "Model photoshoot"
+          },
+          secondary: {
+            src: {
+              "1280": "../assets/images/10.webp"
+            },
+            alt: "Woman in the mountains"
+          }
+        },
+        button: {
+          text: "Scroll down",
+          href: "#about",
+          icon: "arrow-down"
+        }
+      },
+
+      about = {
+        id: "about",
+        heading: "About&nbsp;me",
+        description: "Hi! I&rsquo;m Vera, a&nbsp;photographer with 5&nbsp;years of experience. For me, photography is&nbsp;more than just an image. It&rsquo;s a&nbsp;way to feel the moment, capture the atmosphere, and freeze time. I work with people, stories, and emotions.",
+        supportingDescription: "I&nbsp;shoot all across Europe. I&nbsp;love natural light, genuine emotions, and beautiful details. Each shot is a small piece of&nbsp;art. My&nbsp;goal is to create timeless images that tell your unique story.",
+        motto: "Seeing with heart. Shooting with soul.",
+        pictures: {
+          primary: {
+            src: {
+              "1280": "../assets/images/photographer-1.webp",
+              "768": "../assets/images/photographer-1-768.webp",
+              "380": "../assets/images/photographer-1-380.webp"
+            },
+            alt: "Vera is in a coffee shop"
+          },
+          secondary: {
+            src: {
+              "1280": "../assets/images/photographer-2.webp",
+              "768": "../assets/images/photographer-2-768.webp",
+              "380": "../assets/images/photographer-2-380.webp"
+            },
+            alt: "Vera is in Barcelona"
+          },
+          tertiary: {
+            src: {
+              "1280": "../assets/images/photographer-3.webp",
+              "768": "../assets/images/photographer-3-768.webp",
+              "380": "../assets/images/photographer-3-380.webp"
+            },
+            alt: "Vera is in London"
+          }
+        }
+      },
+
+      portfolio = {
+        id: "portfolio",
+        heading: "My&nbsp;portfolio",
+        subheading: "Every shoot is&nbsp;a&nbsp;story. Here you&rsquo;ll find portraits, love stories, family sessions, and more.",
+        slider: {
+          slides: [
+            {
+              src: {
+                "1280": "../assets/images/slider-l-1.webp"
+              },
+              alt: "A man and a woman are watching the sunset"
+            },
+            {
+              src: {
+                "1280": "../assets/images/slider-s-1.webp"
+              },
+              alt: "A man and a woman hugging each other"
+            },
+            {
+              src: {
+                "1280": "../assets/images/slider-m-1.webp"
+              },
+              alt: "Woman on a horse in the mountains"
+            },
+            {
+              src: {
+                "1280": "../assets/images/slider-l-2.webp"
+              },
+              alt: "A man and a woman hugging each other"
+            },
+            {
+              src: {
+                "1280": "../assets/images/slider-m-2.webp"
+              },
+              alt: "Two girls on a balcony looking at the sun with their heads tilted back"
+            },
+            {
+              src: {
+                "1280": "../assets/images/slider-s-2.webp"
+              },
+              alt: "A man and a woman hugging each other"
+            },
+            {
+              src: {
+                "1280": "../assets/images/slider-m-3.webp"
+              },
+              alt: "A man and a woman looking and smiling at each other"
+            },
+            {
+              src: {
+                "1280": "../assets/images/slider-l-3.webp"
+              },
+              alt: "Hands of the newlyweds"
+            },
+            {
+              src: {
+                "1280": "../assets/images/slider-s-3.webp"
+              },
+              alt: "A man and a woman dancing in a field"
+            },
+            {
+              src: {
+                "1280": "../assets/images/slider-m-4.webp"
+              },
+              alt: "A woman holding a man in an embrace"
+            },
+            {
+              src: {
+                "1280": "../assets/images/slider-m-5.webp"
+              },
+              alt: "A man and a woman hugging each other"
+            },
+            {
+              src: {
+                "1280": "../assets/images/slider-l-4.webp"
+              },
+              alt: "A man and a woman looking and smiling at each other"
+            }
+          ],
+          lazy: true
+        }
+      },
+
+      price = {
+        id: "price",
+        heading: "Packages &amp;&nbsp;Pricing",
+        subheading: "Choose the package that suits your story. All options are customizable to&nbsp;your needs.",
+        list: [
+          {
+            heading: "Mini",
+            description: "For short sessions and quick results",
+            features: [
+              "Up&nbsp;to&nbsp;1&nbsp;hour of&nbsp;shooting",
+              "1&nbsp;outfit&nbsp;/ 1&nbsp;location",
+              "20&nbsp;edited photos",
+              "Online gallery",
+              "Delivery within 7&nbsp;days"
+            ],
+            price: 150
+          },
+          {
+            heading: "Classic",
+            description: "Perfect for couples, portraits, or lifestyle",
+            features: [
+              "Up&nbsp;to&nbsp;2&nbsp;hours of&nbsp;shooting",
+              "2&nbsp;outfits&nbsp;/ 2&nbsp;locations",
+              "40+&nbsp;edited photos",
+              "Online gallery",
+              "Pre-shoot consultation",
+              "Posing guidance",
+              "Delivery within 10&nbsp;days"
+            ],
+            price: 280
+          },
+          {
+            heading: "Story",
+            description: "For when you want to&nbsp;capture everything",
+            features: [
+              "Up&nbsp;to&nbsp;4&nbsp;hours of&nbsp;shooting",
+              "3&ndash;4 outfits and locations",
+              "80+&nbsp;edited photos",
+              "Online gallery + backup link",
+              "Custom route planning",
+              "Moodboard and styling help",
+              "Includes breaks and travel time",
+              "Delivery within 14&nbsp;days"
+            ],
+            price: 450
+          },
+          {
+            heading: "Wedding",
+            description: "Full-day or&nbsp;partial wedding coverage",
+            features: [
+              "Up&nbsp;to&nbsp;8&nbsp;hours of&nbsp;shooting",
+              "All key moments covered",
+              "250+ artistically edited photos",
+              "Custom timeline planning",
+              "Online gallery + USB drive",
+              "Delivery within 21&nbsp;days",
+              "Extras: photo album, prints",
+              "Optional second-day shoot"
+            ],
+            price: 900
+          }
+        ],
+        button: {
+          text: "Book now"
+        }
+      },
+
+      faq = {
+        id: "faq",
+        heading: "Frequently Asked Questions",
+        subheading: "Everything You Wanted to&nbsp;Ask (and a&nbsp;Bit More)",
+        accordion: {
+          name: "faq",
+          details: [
+            {
+              question: "How do&nbsp;I book a&nbsp;shoot?",
+              answer: "Super simple&nbsp;&ndash; just message me&nbsp;through any convenient platform (Instagram, Telegram, WhatsApp, or&nbsp;the contact form on&nbsp;this site). We&rsquo;ll discuss your preferred date, city, and session type. Once confirmed, I&rsquo;ll reserve the date for you and send over preparation tips.",
+              dataId: "0"
+            },
+            {
+              question: "Can I&nbsp;choose the location myself?",
+              answer: "Absolutely! If&nbsp;there&rsquo;s a&nbsp;special place you love or&nbsp;have in&nbsp;mind&nbsp;&mdash; I&rsquo;m happy to&nbsp;shoot there. If&nbsp;you&rsquo;re unsure, I&nbsp;can suggest beautiful spots with great lighting and atmosphere, tailored to&nbsp;your vision and mood.",
+              dataId: "1"
+            },
+            {
+              question: "How long does the shoot take?",
+              answer: "That depends on&nbsp;the package you choose. On&nbsp;average, sessions last from 1&nbsp;to&nbsp;4&nbsp;hours. We&rsquo;ll plan the pace and type of&nbsp;shoot together&nbsp;&mdash; from relaxed city strolls and love stories to&nbsp;more dynamic or&nbsp;editorial sessions.",
+              dataId: "2"
+            },
+            {
+              question: "When will&nbsp;I receive the photos?",
+              answer: "You&rsquo;ll receive your edited photos within 7&ndash;14&nbsp;days. For event and wedding sessions&nbsp;&mdash; up&nbsp;to&nbsp;30&nbsp;days. I&nbsp;deliver them in&nbsp;a&nbsp;stylish online gallery, where you can download them in&nbsp;full quality or&nbsp;easily share with friends and family.",
+              dataId: "3"
+            },
+            {
+              question: "Will you help me&nbsp;pose?",
+              answer: "Definitely! I&rsquo;ll guide you gently throughout the session&nbsp;&mdash; where to&nbsp;look, how to&nbsp;move, how to&nbsp;relax. The goal is&nbsp;to&nbsp;make you feel comfortable and natural. My&nbsp;approach is&nbsp;relaxed, and I&rsquo;ll never force awkward poses. The result? Real, expressive, and beautiful photos.",
+              dataId: "4"
+            },
+            {
+              question: "What should I&nbsp;wear?",
+              answer: "After booking, I&rsquo;ll send you a&nbsp;style guide with suggestions for colors, textures, and combinations. The most important thing is&nbsp;that you feel confident in&nbsp;your outfit. I&rsquo;m also happy to&nbsp;help you coordinate looks or&nbsp;plan something cohesive for couples or&nbsp;groups.",
+              dataId: "5"
+            },
+            {
+              question: "Do&nbsp;you retouch the photos?",
+              answer: "Yes, all photos are color-corrected and lightly retouched. My&nbsp;editing style is&nbsp;clean and natural&nbsp;&mdash; no&nbsp;overdone filters or&nbsp;fake skin. Just you, at&nbsp;your best. Extra retouching is&nbsp;available upon request.",
+              dataId: "6"
+            },
+            {
+              question: "Can I&nbsp;get the raw files?",
+              answer: "I&nbsp;don&rsquo;t deliver RAW files. My&nbsp;work includes not only shooting, but also careful selection and editing to&nbsp;create a&nbsp;complete and polished result. You&rsquo;ll receive only the best images, ready for printing, sharing, or&nbsp;publishing.",
+              dataId: "7"
+            }
+          ]
+        }
+      },
+
+      contacts = {
+        id: "contacts",
+        heading: "Like my&nbsp;portfolio? Sign up&nbsp;for a&nbsp;shoot!",
+        form: {
+          inputs: [
+            {
+              name: "name",
+              placeholder: "Your name",
+              autocomplete: "name"
+            },
+            {
+              type: "tel",
+              name: "tel",
+              placeholder: "Phone",
+              value: "+1",
+              autocomplete: "tel"
+            }
+          ],
+          submitButton: {
+            text: "Book now"
+          }
+        }
+      },
+
+      footer = {
+        links: [
+          {
+            text: "Instagram",
+            href: "https://www.instagram.com/vera.parisphoto"
+          },
+          {
+            text: "Telegram",
+            href: "https://telegram.me/12349843572"
+          },
+          {
+            text: "WhatsApp",
+            href: "https://wa.me/12349843572"
+          },
+          {
+            text: "Europe",
+            href: "https://www.google.com/maps/place/Europe/@47.5870266,1.0564667,4z/data=!3m1!4b1!4m6!3m5!1s0x46ed8886cfadda85:0x72ef99e6b3fcf079!8m2!3d54.5259614!4d15.2551187!16zL20vMDJqOXo?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D"
+          },
+          {
+            text: "+1 234 9843572",
+            href: "tel:+12349843572"
+          }
+        ]
+      },
+
+      drawer = {
+        nav: [
+          {
+            text: "About me",
+            href: "#about"
+          },
+          {
+            text: "Portfolio",
+            href: "#portfolio"
+          },
+          {
+            text: "Price",
+            href: "#price"
+          },
+          {
+            text: "FAQ",
+            href: "#faq"
+          },
+          {
+            text: "Contacts",
+            href: "#contacts"
+          }
+        ]
+      },
+
+      contactFormDialog = {
+        heading: "Like my&nbsp;portfolio? Sign up&nbsp;for a shoot!",
+        form: {
+          inputs: [
+            {
+              name: "name",
+              placeholder: "Your name",
+              autocomplete: "name"
+            },
+            {
+              type: "tel",
+              name: "tel",
+              placeholder: "Phone",
+              value: "+1",
+              autocomplete: "tel"
+            }
+          ],
+          submitButton: {
+            text: "Book now"
+          }
+        }
+      }
+    ) }}
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{% macro "stats-card"(className, heading, stats) %}
+  {% set classAttr = "stats-card d-flex gap-1 body-decoration" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <strong class="{{ classAttr }}">
+    <span>+</span>
+
+    <span class="d-flex flex-column gap-1">
+      <span>{{ stats }}</span>
+
+      <span class="body-base">{{ heading }}</span>
+    </span>
+  </strong>
+{% endmacro %}

@@ -1,0 +1,55 @@
+@use "@/assets/styles/mixins" as mix;
+@use "@/assets/styles/functions" as fn;
+
+@keyframes show-icon {
+  to {
+    transform: translateY(0%);
+  }
+}
+@keyframes hide-icon {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.text-button {
+  $this: &;
+
+  @include mix.transition(color);
+
+  user-select: none;
+
+  @include mix.hover {
+    color: var(--color-primary-100);
+
+    #{$this}__icon {
+      &_hidden {
+        animation: show-icon var(--transition-duration-basic)
+          var(--transition-easing-func);
+      }
+
+      &_visible {
+        animation: hide-icon var(--transition-duration-basic)
+          var(--transition-easing-func);
+      }
+    }
+  }
+
+  &__icon-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: fn.to-rem(24px);
+    height: fn.to-rem(24px);
+  }
+
+  &__icon {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    &_hidden {
+      transform: translateY(-100%);
+    }
+  }
+}

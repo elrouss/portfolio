@@ -1,0 +1,25 @@
+{% macro dialog(className, heading) %}
+  {% set classAttr = "dialog d-flex flex-column justify-content-center align-items-center visually-hidden" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <div class="{{ classAttr }}">
+    <div class="dialog__wrapper p-7" role="dialog" aria-modal="true">
+      <button
+        class="dialog__close-button d-flex justify-content-center align-items-center"
+        type="button"
+        aria-label="Close dialog"
+      >
+        <span class="dialog__close-button-icon"></span>
+      </button>
+
+      <h2 class="h-3 dialog__heading">{{ heading | safe }}</h2>
+
+      <div class="mt-2">
+        {{ caller() }}
+      </div>
+    </div>
+  </div>
+{% endmacro %}

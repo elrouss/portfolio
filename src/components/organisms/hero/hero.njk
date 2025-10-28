@@ -1,0 +1,72 @@
+{% import "src/components/atoms/picture/picture.njk" as Picture %}
+{% import "src/components/atoms/separator/separator.njk" as Separator %}
+{% import "src/components/atoms/text-button/text-button.njk" as TextButton %}
+
+{% import "src/components/molecules/stats-card/stats-card.njk" as StatsCard %}
+
+{% macro hero(className, heading, subheading, description, stats, small, pictures, button) %}
+  {% set classAttr = "hero dark-theme" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <section class="{{ classAttr }}">
+    <div class="wrapper d-flex flex-column-xs justify-content-between gap-6 py-7 hero__wrapper">
+      <div class="hero__col-1 d-flex flex-column align-items-start gap-6">
+        <h1 class="hero__heading h-1">{{ heading | safe }}</h1>
+
+        <p class="hero__subheading h-3">{{ subheading | safe }}</p>
+
+        <div class="d-flex gap-7">
+          {% for item in stats %}
+            {{ StatsCard["stats-card"](
+              heading = item.heading,
+              stats = item.stats
+            ) }}
+          {% endfor %}
+        </div>
+
+        {% call TextButton["text-button"](
+          className = "hero__action-button",
+          href = button.href,
+          icon = button.icon
+        ) %}
+        {{ button.text }}
+        {% endcall %}
+      </div>
+
+      <div class="hero__col-2 d-flex flex-column justify-content-between gap-7">
+        {{ Picture.picture(
+          className = "hero__primary-picture",
+          src = pictures.primary.src,
+          alt = pictures.primary.alt,
+          fetchPriority = "high"
+        ) }}
+
+        <p class="hero__supporting-text d-flex flex-column">
+          {% for line in description %}
+            <span>{{ line | safe }}</span>
+          {% endfor %}
+        </p>
+      </div>
+
+      <div class="hero__col-3 d-flex align-items-center gap-2">
+        <time class="body-small" datetime="{{ small.datetime }}">{{ small.date }}</time>
+
+        {{ Separator.separator(orientation = "vertical") }}
+
+        <small class="body-small">{{ small.text }}</small>
+      </div>
+
+      <div class="hero__col-4 d-flex justify-content-center align-items-center d-none-s">
+        {{ Picture.picture(
+          className = "hero__secondary-picture",
+          src = pictures.secondary.src,
+          alt = pictures.secondary.alt,
+          fetchPriority = "high"
+        ) }}
+      </div>
+    </div>
+  </section>
+{% endmacro %}

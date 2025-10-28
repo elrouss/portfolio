@@ -42,7 +42,7 @@ export default {
     extensions: ['.js', '.ts'],
     alias: {
       '@/assets': path.resolve(__dirname, 'src/assets'),
-      '@/blocks': path.resolve(__dirname, 'src/blocks'),
+      '@/components': path.resolve(__dirname, 'src/components'),
       '@/constants': path.resolve(__dirname, 'src/constants'),
       '@/pages': path.resolve(__dirname, 'src/pages'),
       '@/services': path.resolve(__dirname, 'src/services'),

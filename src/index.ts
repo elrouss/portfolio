@@ -1,12 +1,11 @@
-import * as icons from './blocks/icon/icon';
+import * as icons from './components/atoms/icon/icon';
 
 import Auth from './services/auth';
 
-import Header from './blocks/header/header';
-
-import Slider from './blocks/slider/slider';
-import PricingCardList from './blocks/pricing-card-list/pricing-card-list';
-import Accordion from './blocks/accordion/accordion';
+import Header from './components/organisms/header/header';
+import Slider from './components/organisms/slider/slider';
+import PricingCardList from './components/organisms/pricing-card-list/pricing-card-list';
+import Accordion from './components/organisms/accordion/accordion';
 
 import { enableOnLoadStyle } from './utils/styles';
 

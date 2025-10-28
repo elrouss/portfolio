@@ -1,0 +1,16 @@
+{% macro input(className, type = "text", placeholder, name, value, autocomplete) %}
+  {% set classAttr = "input px-2 h-4" %}
+
+  {% if className %}
+    {% set classAttr = classAttr + " " + className %}
+  {% endif %}
+
+  <input
+    class="{{ classAttr }}"
+    type="{{ type }}"
+    placeholder="{{ placeholder }}"
+    {% if name %} name="{{ name }}"{% endif %}
+    {% if value %} value="{{ value }}"{% endif %}
+    {% if autocomplete %} autocomplete="{{ autocomplete }}"{% endif %}
+  >
+{% endmacro %}
