@@ -12,7 +12,7 @@ export const throttle = (
     if (currentTime - previousTime > limiter) {
       previousTime = currentTime;
 
-      callback(args);
+      callback(...args);
     }
   };
 };

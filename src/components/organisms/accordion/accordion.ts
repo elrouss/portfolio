@@ -20,9 +20,9 @@ class Accordion {
 
   private init = () => {
     if (Auth.isWebsiteFirstVisit) {
-      this.setDefaultOpenSummaryId();
-    } else {
       this.setInitialOpenSummaryId();
+    } else {
+      this.setDefaultOpenSummaryId();
     }
   };
 
