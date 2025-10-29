@@ -3,11 +3,11 @@ import LocalStorageAdapter from './local-storage-adapter';
 const localStorageKey = 'elrouss-portfolio:auth';
 
 class Auth {
-  static isWebsiteFirstVisit = false;
+  static isWebsiteFirstVisit = true;
 
   static authorize = () => {
     if (LocalStorageAdapter.getItem<true>(localStorageKey)) {
-      this.isWebsiteFirstVisit = true;
+      this.isWebsiteFirstVisit = false;
     } else {
       LocalStorageAdapter.setItem(localStorageKey, true);
     }

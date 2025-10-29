@@ -69,7 +69,7 @@ export const rules = [
         loader: 'svg-sprite-loader',
         options: {
           spriteFilename: 'sprite.svg',
-          publicPath: '/',
+          publicPath: './',
           symbolId: 'ic-[name]'
         }
       },
@@ -80,7 +80,7 @@ export const rules = [
     test: /\.(woff2)$/i,
     type: 'asset/resource',
     generator: {
-      filename: 'assets/fonts/[name][ext]'
+      filename: 'assets/fonts/[name].[contenthash:8][ext]'
     }
   }
 ];
