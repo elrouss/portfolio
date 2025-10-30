@@ -4,9 +4,7 @@ import TouchDeviceAdapter, {
 
 import { BREAKPOINTS } from '@/constants/breakpoints';
 
-import type { Timeout } from '@/types/global.types';
-
-const SCROLL_BASIC_STEP = 4;
+const SCROLL_BASIC_STEP = 8;
 const SWIPE_BASIC_STEP = 300;
 
 class Slider {
@@ -18,7 +16,7 @@ class Slider {
   private hoverAreaStartElement: HTMLDivElement | null = null;
   private hoverAreaEndElement: HTMLDivElement | null = null;
 
-  private slidesOffsetXTimeoutIntervalId: Timeout | null = null;
+  private requestAnimationFrameId: number | null = null;
   private slidesOffsetX = 0;
 
   private mode?: 'scroll' | 'swipe';
@@ -152,27 +150,19 @@ class Slider {
     const step = this.calcSliderStep(direction, SCROLL_BASIC_STEP);
 
     if (Math.abs(Math.round(step)) <= 0) {
+      if (this.requestAnimationFrameId) {
+        cancelAnimationFrame(this.requestAnimationFrameId);
+      }
+
       return;
     }
 
-    if (this.slidesOffsetXTimeoutIntervalId) {
-      clearInterval(this.slidesOffsetXTimeoutIntervalId);
-    }
+    this.slidesOffsetX += step;
+    this.setSlidesOffsetX(this.slidesOffsetX);
 
-    this.slidesOffsetXTimeoutIntervalId = setInterval(() => {
-      const step = this.calcSliderStep(direction, SCROLL_BASIC_STEP);
-
-      this.slidesOffsetX += step;
-
-      this.setSlidesOffsetX(this.slidesOffsetX);
-
-      if (
-        Math.abs(Math.round(step)) <= 0 &&
-        this.slidesOffsetXTimeoutIntervalId
-      ) {
-        clearInterval(this.slidesOffsetXTimeoutIntervalId);
-      }
-    }, 0);
+    this.requestAnimationFrameId = requestAnimationFrame(() =>
+      this.scrollSlider(direction)
+    );
   };
 
   private calcSliderStep = (direction: Direction, basicStep: number) => {
@@ -210,9 +200,11 @@ class Slider {
   };
 
   private onMouseLeave = () => {
-    if (this.slidesOffsetXTimeoutIntervalId) {
-      clearInterval(this.slidesOffsetXTimeoutIntervalId);
+    if (!this.requestAnimationFrameId) {
+      return;
     }
+
+    cancelAnimationFrame(this.requestAnimationFrameId);
   };
 
   private onTouchStart = (event: TouchEvent) => {
