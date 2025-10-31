@@ -1,12 +1,12 @@
 {
-  "name": "elrouss-jsfe2025q3",
+  "name": "portfolio",
   "version": "1.0.0",
   "type": "module",
   "main": "./src/index.ts",
-  "homepage": "https://rolling-scopes-school.github.io/elrouss-JSFE2025Q3",
+  "homepage": "https://elrouss.github.io/portfolio",
   "repository": {
     "type": "git",
-    "url": "git+https://rolling-scopes-school.github.io/elrouss-JSFE2025Q3.git"
+    "url": "git+https://elrouss.github.io/portfolio.git"
   },
   "scripts": {
     "build": "webpack",
