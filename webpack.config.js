@@ -19,11 +19,11 @@ export default {
   target,
   devtool,
   output: {
-    path: path.resolve(__dirname, 'dist/portfolio'),
+    path: path.resolve(__dirname, './dist'),
     clean: true
   },
   devServer: {
-    static: path.resolve(__dirname, './dist/portfolio'),
+    static: path.resolve(__dirname, './dist'),
     port: 8080,
     client: {
       logging: 'none',
