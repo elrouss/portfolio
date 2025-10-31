@@ -6,13 +6,12 @@
   "homepage": "https://elrouss.github.io/portfolio",
   "repository": {
     "type": "git",
-    "url": "git+https://elrouss.github.io/portfolio.git"
+    "url": "git+https://github.com/elrouss/portfolio.git"
   },
   "scripts": {
     "build": "webpack",
     "build:dev": "rm -rf dist && webpack --mode=development",
     "build:prod": "rm -rf dist && webpack --mode=production",
-    "deploy:dev": "npm run build:prod && gh-pages -d dist",
     "dev": "webpack serve",
     "prettier:check": "prettier --check .",
     "tsc": "tsc --noEmit",
@@ -36,7 +35,6 @@
     "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
     "eslint": "^9.36.0",
-    "gh-pages": "^6.3.0",
     "globals": "^16.4.0",
     "html-bundler-webpack-plugin": "^4.21.1",
     "husky": "^9.1.7",
