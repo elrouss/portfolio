@@ -1,6 +1,6 @@
 # Vera Photography — Portfolio
 
-Hero section (image to be added)
+![Home Page](https://github.com/user-attachments/assets/551438a5-9c8f-4e12-8cf7-d8f6379d40b3)
 
 ## Contents
 
