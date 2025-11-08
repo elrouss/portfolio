@@ -24,7 +24,7 @@
   },
   "keywords": [],
   "author": "Boris Zashliapin <elrouss.dev@yandex.ru>",
-  "license": "ISC",
+  "license": "MIT",
   "description": "",
   "devDependencies": {
     "@babel/core": "^7.28.4",

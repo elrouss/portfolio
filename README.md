@@ -148,6 +148,6 @@ Build with `npm run build:prod` and publish the `dist/` folder (e.g., via CI or 
 
 ## 11. License
 
-ISC © 2025 Boris Zashliapin
+MIT © 2025 Boris Zashliapin
 
 [back to contents](#contents)
